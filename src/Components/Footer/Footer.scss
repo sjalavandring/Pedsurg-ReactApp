@@ -1,0 +1,22 @@
+.footer {
+	display: flex;
+	justify-content: space-between;
+	padding: 10px;
+	background-color: #0099FF;
+	color: #fff;
+}
+
+.footer-socials {
+	display: flex;
+
+}
+
+.footer-copyright {
+	align-self: center;
+	margin: 0 10px;
+	font-size: 12px;
+}
+
+.footer-socials__item {
+	margin: 0 10px;
+}

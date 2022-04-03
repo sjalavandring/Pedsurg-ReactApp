@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital@1&display=swap');
+
+// @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
+@import "Components/Header/Header.scss";
+@import "Components/Main/Main.scss";
+@import "Components/Footer/Footer.scss";
+@import "Components/SliderMain/Slider.scss";
+
+
+
+* { 
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  // font-family: 'Roboto Slab', serif;
+  width: 100%;
+  margin: 0 auto;
+  background-color: #E5E5E5;
+}
+
+
+img  {
+  display: block;
+}
+
+a {
+  color: #FFF;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  margin: 0px auto;
+  max-width: 1440px;
+  width: 100%;
+}

@@ -1,0 +1,28 @@
+import SliderMain from '../SliderMain/Slider.js'
+import slide1 from "../../img/main-slider/slide1.jpg";
+import slide2 from "../../img/main-slider/slide2.jpg";
+import slide3 from "../../img/main-slider/slide3.jpg";
+import slide4 from "../../img/main-slider/slide4.jpg";
+import slide5 from "../../img/main-slider/slide5.jpg";
+import slide6 from "../../img/main-slider/slide6.jpg";
+
+function Main() {
+	let sliderData = [
+		{id: 1, src: slide1, href: "https://www.google.ru/"},
+		{id: 2, src: slide2, href: "https://www.google.ru/"},
+		{id: 3, src: slide3, href: "https://www.google.ru/"},
+		{id: 4, src: slide4, href: "https://www.google.ru/"},
+		{id: 5, src: slide5, href: "https://www.google.ru/"},
+		{id: 6, src: slide6, href: "https://www.google.ru/"},
+	]
+
+	return (
+		<main className="main container">
+			<SliderMain sliderData={sliderData} sliderSize={{width: "800px", height: "700px"}}/>
+		</main> 
+	)
+}
+		
+
+export default Main;
+

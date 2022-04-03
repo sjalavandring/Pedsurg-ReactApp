@@ -1,0 +1,43 @@
+$sticky-header: -110px;
+
+.header {
+	position: sticky;
+  	top: $sticky-header;
+}
+
+.header-top {
+	display: flex;
+	justify-content: space-between;
+	background-color: #fff;
+	color: #0099FF;
+	padding: 15px;
+}
+
+.logo {
+	display: flex;
+	justify-content: space-between;
+}
+
+.header-title {
+	align-self: center;
+}
+
+.header-contacts {
+	align-self: center;	
+	padding: 0 30px;
+	font-size: 17px;
+	color: #000;
+}
+
+.nav {
+	background-color: #0099FF;
+	color: #fff;
+	
+}
+
+.nav-menu {
+	display: flex;
+	justify-content: space-between;
+	padding: 15px 30px;
+}
+
