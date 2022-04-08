@@ -8,9 +8,10 @@ export {default as Main} from './Components/Main/Main.js'
 export {default as Footer} from './Components/Footer/Footer.js'
 export {default as Directions} from './Components/Directions/Directions.js'
 
+
 ReactDOM.render(
   <React.StrictMode>
-  <App/>
+    <App/>
   </React.StrictMode>,
   document.querySelector('#pedsurg')
 );

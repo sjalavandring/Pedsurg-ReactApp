@@ -19,10 +19,10 @@ function Header() {
 		{id: 3, text: "Научная деятельность", link: "/science"},
 		{id: 4, text: "Библиотека", link: "/library"},
 		{id: 5, text: "Архив видео", link: "/archive"},
-		{id: 6, text: "Наши учителя", link: "/preceptor"},
+		{id: 6, text: "Наши учителя", link: "/teachers"},
 		{id: 7, text: "О Нас", link: "/about"},
 	]
-
+	//При добавлении новых пунктов меню, добавлять Route в App.js
 	return (
 		<header className="header container">
 			<HeaderTop logos={logoNumbers}/>
