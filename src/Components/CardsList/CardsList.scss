@@ -1,0 +1,19 @@
+.cards-list__item {
+	display: flex;
+	align-items: center;
+	max-width: 1400px;
+	widows: 100%;
+	margin: 60px auto;
+	padding: 20px;
+	justify-content: space-around;
+}
+
+.cards-list__image {
+	
+}
+
+.cards-list__descript {
+	max-width: 700px;
+	font-family: Georgia, serif;
+	font-size: 18px;
+}

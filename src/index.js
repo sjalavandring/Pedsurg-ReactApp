@@ -7,6 +7,7 @@ export {default as Header} from './Components/Header/Header.js';
 export {default as Main} from './Components/Main/Main.js'
 export {default as Footer} from './Components/Footer/Footer.js'
 export {default as Directions} from './Components/Directions/Directions.js'
+export {default as CardsList} from './Components/CardsList/CardsList.js'
 
 
 ReactDOM.render(

@@ -14,13 +14,14 @@ function Header() {
 	];
 
 	let navItems = [
-		{id: 1, text: "Детская хирургия", link: "/surgery"},
-		{id: 2, text: "Основные направления работы", link: "/directions"},
-		{id: 3, text: "Научная деятельность", link: "/science"},
-		{id: 4, text: "Библиотека", link: "/library"},
-		{id: 5, text: "Архив видео", link: "/archive"},
-		{id: 6, text: "Наши учителя", link: "/teachers"},
-		{id: 7, text: "О Нас", link: "/about"},
+		{id: 1, text: "Главная", link: ""},
+		{id: 2, text: "Детская хирургия", link: "/surgery"},
+		{id: 3, text: "Основные направления работы", link: "/directions"},
+		{id: 4, text: "Научная деятельность", link: "/science"},
+		{id: 5, text: "Библиотека", link: "/library"},
+		{id: 6, text: "Архив видео", link: "/archive"},
+		{id: 7, text: "Наши учителя", link: "/teachers"},
+		{id: 8, text: "О Нас", link: "/about"},
 	]
 	//При добавлении новых пунктов меню, добавлять Route в App.js
 	return (
@@ -56,7 +57,6 @@ function HeaderNav(props) {
 	let navList = props.navItems.map((item) => {
 		return <li key={item.id} className="nav-menu__item"><Link to={item.link}>{item.text}</Link></li>
 	}) //Создание списка для элементов навигации
-
 	return (
 		<nav className="nav">
 			<ul className="nav-menu">
