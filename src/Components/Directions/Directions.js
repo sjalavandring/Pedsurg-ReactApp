@@ -4,9 +4,9 @@ import dirInfo from '../../database/CardsListDB.js';
 
 function Directions() {
 	return (
-		<div className="container">
+		<main className="main-directions container">
 			<CardsList dirInfo={dirInfo}/>
-		</div>	
+		</main>	
 	)
 }
 

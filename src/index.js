@@ -8,7 +8,7 @@ export {default as Main} from './Components/Main/Main.js'
 export {default as Footer} from './Components/Footer/Footer.js'
 export {default as Directions} from './Components/Directions/Directions.js'
 export {default as CardsList} from './Components/CardsList/CardsList.js'
-
+export {default as Publications} from './Components/Publications/Publications.js'
 
 ReactDOM.render(
   <React.StrictMode>
