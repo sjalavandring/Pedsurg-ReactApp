@@ -2,7 +2,7 @@ import dir1 from "../img/DirectionsCardsList/dir1.jpg";
 import dir2 from "../img/DirectionsCardsList/dir2.jpg";
 import dir3 from "../img/DirectionsCardsList/dir3.jpg";
 
-let db =   [
+let cardsDB =   [
 				{
 					"id": 1,
 					"link": dir1,
@@ -20,4 +20,4 @@ let db =   [
 				}
 			]
 
-export default db;
+export default cardsDB;

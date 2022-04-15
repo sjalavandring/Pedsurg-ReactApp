@@ -1,20 +1,18 @@
-// import logo from "../../img/DirectionsCardsList/youtube_cont.png"
-
 function CardList(props) {
-	let cardsListInfo = props.dirInfo.map((item, id) => {
+	let cardsListInfo = props.cardsInfo.map((item, id) => {
 		if (item.id % 2 == 1)
 		return (
 			<div className="cards-list__item">
-				<CardsListImage dirInfo={props.dirInfo[id]}/>
-				<CardsListDescript dirInfo={props.dirInfo[id]}/>
+				<CardsListImage cardsInfo={props.cardsInfo[id]}/>
+				<CardsListDescript cardsInfo={props.cardsInfo[id]}/>
 			</div>
 		)
 	
 		if (item.id % 2 == 0)  
 		return (
 			<div className="cards-list__item">
-				<CardsListDescript dirInfo={props.dirInfo[id]}/>
-				<CardsListImage dirInfo={props.dirInfo[id]}/>
+				<CardsListDescript cardsInfo={props.cardsInfo[id]}/>
+				<CardsListImage cardsInfo={props.cardsInfo[id]}/>
 			</div>
 		)
 		
@@ -29,7 +27,7 @@ function CardList(props) {
 function CardsListImage (props) {
 	return (
 		<div className="cards-list__image">
-			<img src={props.dirInfo.link} alt="illustration" width="350px"/>	
+			<img src={props.cardsInfo.link} alt="illustration" width="350px"/>	
 		</div>	
 	)
 }
@@ -37,7 +35,7 @@ function CardsListImage (props) {
 function CardsListDescript (props) {
 	return (
 		<div className="cards-list__descript">
-			<p>{props.dirInfo.text}</p>
+			<p>{props.cardsInfo.text}</p>
 		</div>
 	)
 }
