@@ -26,12 +26,10 @@ $sticky-header: -110px;
 	align-self: center;	
 	padding: 0 30px;
 	font-size: 17px;
-	color: #000;
 }
 
 .nav {
 	background-color: #0099FF;
-	color: #fff;
 	
 }
 
@@ -39,9 +37,11 @@ $sticky-header: -110px;
 	display: flex;
 	justify-content: space-between;
 	padding: 15px 30px;
+
 }
 
 .nav-menu__item {
+	color: #fff;
 	transition: 0.3s ease;
 	&:hover {
 		// border-bottom: 1px solid white;

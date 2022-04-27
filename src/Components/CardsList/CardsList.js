@@ -1,3 +1,5 @@
+import {Header, Main, Footer, Directions, Publications} from '../../index.js';
+
 function CardList(props) {
 	let cardsListInfo = props.cardsInfo.map((item, id) => {
 		if (item.id % 2 == 1)

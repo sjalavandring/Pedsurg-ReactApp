@@ -55,7 +55,7 @@ function HeaderTop(props) {
 
 function HeaderNav(props) {
 	let navList = props.navItems.map((item) => {
-		return <li key={item.id} className="nav-menu__item"><Link to={item.link}>{item.text}</Link></li>
+		return <li key={item.id} ><Link className="nav-menu__item" to={item.link}>{item.text}</Link></li>
 	}) //Создание списка для элементов навигации
 	return (
 		<nav className="nav">

@@ -1,0 +1,56 @@
+.publications-chapters{
+	display: flex;
+	justify-content: center;
+}
+
+.publications-chapters__item{
+	max-width: 150px;
+	flex-grow: 1;
+	margin:30px 30px 100px;
+	justify-content: center;
+	text-align: center;
+	font-weight: bold;
+	font-size: 1.5em;	
+	// border-bottom: 2px solid #0099FF;
+}
+
+.main-publications{
+	background-color: #fff;
+}
+
+.publications-content {
+	padding: 30px 0;
+}
+
+.publication-year {
+	font-size: 1.3em;
+	text-align: center;
+}
+
+.publication {
+	margin: 30px 40px;
+}
+
+.publications-chapters{
+	display: flex;
+	justify-content: center;
+}
+
+.publication-item{
+	margin: 5px 0;
+}
+
+.publication-name{
+	font-size: 1.3em;
+	font-weight: bold;
+}
+
+.main-books-content{
+	display: flex;
+	justify-content: center;
+}
+
+.books__item {
+	margin: 20px;
+	cursor: pointer;
+}

@@ -8,6 +8,7 @@
 @import "Components/SliderMain/Slider.scss";
 @import "Components/Directions/Directions.scss";
 @import "Components/CardsList/CardsList.scss";
+@import "Components/Publications/Publications.scss";
 
 
 * { 
@@ -35,7 +36,7 @@ img  {
 }
 
 a {
-  color: #FFF;
+  color: #000;
   text-decoration: none;
 }
 
@@ -44,7 +45,7 @@ ul {
 }
 
 .container {
-  margin: 0px auto;
+  margin: 0 auto;
   max-width: 1440px;
   width: 100%;
 }
