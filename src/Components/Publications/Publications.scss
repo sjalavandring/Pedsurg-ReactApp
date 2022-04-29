@@ -6,7 +6,7 @@
 .publications-chapters__item{
 	max-width: 150px;
 	flex-grow: 1;
-	margin:30px 30px 100px;
+	margin:30px 30px 75px;
 	justify-content: center;
 	text-align: center;
 	font-weight: bold;
@@ -18,11 +18,7 @@
 	background-color: #fff;
 }
 
-.publications-content {
-	padding: 30px 0;
-}
-
-.publication-year {
+.publication__year {
 	font-size: 1.3em;
 	text-align: center;
 }
@@ -36,21 +32,21 @@
 	justify-content: center;
 }
 
-.publication-item{
-	margin: 5px 0;
-}
-
-.publication-name{
+.publication__name{
 	font-size: 1.3em;
 	font-weight: bold;
 }
 
-.main-books-content{
+.publication__item{
+	margin: 5px 0;
+}
+
+.publications-books-content{
 	display: flex;
 	justify-content: center;
 }
 
-.books__item {
+.book {
 	margin: 20px;
 	cursor: pointer;
 }
