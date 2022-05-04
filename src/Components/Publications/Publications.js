@@ -57,35 +57,36 @@ function PublicationsItems (props) {
 }
 
 function Books() {
-	const [zoom, setZoom] = useState(false);
+	const [isZoomed, setZoom] = useState(false);
+	const [activeBook, setActiveBook] = useState(0);
 
 	let bookInfo = publicBooks.map((info) => {
 		return (
-			<div className="book" key={info.id} onClick={() => setZoom(!zoom)}><img className="book__img" src={info.link} alt="logo" height="250"/></div>
+			<div className="book" key={info.id} onClick={() => {setZoom(!isZoomed); setActiveBook(publicBooks[info.id-1])}}><img className="book__img" src={info.link} alt="logo" height="250"/></div>
 		)
 	})
-	console.log(zoom)
+
 	return (
 		<div className="publications-books-content">
 			{bookInfo}
-			<div className={"book-zoom " + (zoom == 1 ? "shadowBack" : "")} onClick={() => setZoom(!zoom)}></div>
-			<ZoomBook/>
+			<div className={"book-zoom-background " + (isZoomed == 1 ? "shadowBack" : "")} onClick={() => setZoom(!isZoomed)}></div>
+			<ZoomBook activeBook={activeBook} isZoomed={isZoomed}/>
 		</div>
 	)
 }
 
-function ZoomBook() {
-	// setZoom(100);
+function ZoomBook(props) {
+	// console.log(props)
 	return (
-		<BookInformation/>
+		<BookInformation activeBook={props.activeBook} isZoomed={props.isZoomed}/>
 	)
 }
 
-function BookInformation () {
+function BookInformation (props) {
 	return (
-		<div className={"book-zoom-info"}>
-			<div className="book-zoom__img book-zoom__item"><img className="book__img" src={publicBooks[1].link} alt="logo" height="330"/></div>
-			<div className="book-zoom__description book-zoom__item">{publicBooks[1].description}</div>
+		<div className={"book-zoom-info " + (!props.isZoomed ? "inactive" : "")}> {/*Передаю пропс из Books с состоянием, чтобы понять, активно ли окно BookInformation*/}
+			<div className="book-zoom__img book-zoom__item"><img className="book__img" src={props.activeBook.link} alt="logo" height="330"/></div>
+			<div className="book-zoom__description book-zoom__item">{props.activeBook.description}</div>
 		</div>	
 	)	
 }
