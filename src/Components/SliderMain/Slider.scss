@@ -1,3 +1,5 @@
+$basic-color: #0066FF;
+
 .slider {
 	display: flex;
 	justify-content: center;
@@ -21,7 +23,7 @@
 .slider-points__item {
 	display: block;
 	margin: 15px 5px;
-	border: 2px solid #0099FF;
+	border: 2px solid $basic-color;
 	width: 14px;
 	height: 14px;
 	border-radius: 10px;
@@ -35,7 +37,7 @@
 
 .slider-points__item--active {
 	@extend .slider-points__item;
-	background-color: #0099FF;
+	background-color: $basic-color;
 }
 
 .slider-arrow {

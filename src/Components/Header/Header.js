@@ -8,16 +8,16 @@ import {Footer} from '../../index.js'
 
 function Header() {
 	let logoNumbers = [
-		{id: 1, link: logo1},
-		{id: 2, link: logo3}, 
-		{id: 3, link: logo2}
+		{id: 1, link: logo1, href: "http://xn----9sbdbejx7bdduahou3a5d.xn--p1ai/"},
+		{id: 2, link: logo3, href: "http://xn----9sbdbejx7bdduahou3a5d.xn--p1ai/"}, 
+		{id: 3, link: logo2, href: "https://fmba.gov.ru/"}
 	];
 
 	let navItems = [
 		{id: 1, text: "Главная", link: ""},
 		{id: 2, text: "Детская хирургия", link: "/surgery"},
 		{id: 3, text: "Основные направления работы", link: "/directions"},
-		{id: 4, text: "Научная деятельность", link: "/publications"},
+		{id: 4, text: "Научная деятельность", link: "/publications/mentions"},
 		{id: 5, text: "Библиотека", link: "/library"},
 		{id: 6, text: "Архив видео", link: "/archive"},
 		{id: 7, text: "Наши учителя", link: "/teachers"},
@@ -34,7 +34,7 @@ function Header() {
 
 function HeaderTop(props) {
 	const logosList = props.logos.map((logo) => {
-		return <a key={logo.id} href=""><img className="logo__image" src={logo.link} alt="logo" height="80"/></a>
+		return <a key={logo.id} href={logo.href}><img className="logo__image" src={logo.link} alt="logo" height="80"/></a>
 	})			//Создание списка из логотипов
 
 	return (

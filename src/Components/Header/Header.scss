@@ -1,4 +1,5 @@
 $sticky-header: -110px;
+$basic-color: #0066FF;
 
 .header {
 	position: sticky;
@@ -9,7 +10,7 @@ $sticky-header: -110px;
 	display: flex;
 	justify-content: space-between;
 	background-color: #fff;
-	color: #0099FF;
+	color: $basic-color;
 	padding: 15px;
 }
 
@@ -29,7 +30,7 @@ $sticky-header: -110px;
 }
 
 .nav {
-	background-color: #0099FF;
+	background-color: $basic-color;
 	
 }
 
