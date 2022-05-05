@@ -8,9 +8,9 @@ import {Footer} from '../../index.js'
 
 function Header() {
 	let logoNumbers = [
-		{id: 1, link: logo1, href: "http://xn----9sbdbejx7bdduahou3a5d.xn--p1ai/"},
-		{id: 2, link: logo3, href: "http://xn----9sbdbejx7bdduahou3a5d.xn--p1ai/"}, 
-		{id: 3, link: logo2, href: "https://fmba.gov.ru/"}
+		{id: 1, link: logo1, href: "https://www.radh.ru/"},
+		{id: 2, link: logo3, href: "https://fmba.gov.ru/"}, 
+		{id: 3, link: logo2, href: "http://xn----9sbdbejx7bdduahou3a5d.xn--p1ai/"}
 	];
 
 	let navItems = [
