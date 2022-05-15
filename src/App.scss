@@ -2,8 +2,10 @@
 
 // @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
 
-@import "Components/Header/Header.scss";
 @import "Components/Main/Main.scss";
+@import "Components/Main/MainMedia.scss";
+@import "Components/Header/Header.scss";
+@import "Components/Header/HeaderMedia.scss";
 @import "Components/Footer/Footer.scss";
 @import "Components/SliderMain/Slider.scss";
 @import "Components/Directions/Directions.scss";
@@ -21,12 +23,13 @@
 
 html {
   overflow-x: hidden;
-  margin-right: calc(-1 * (100vw - 100%));
+  // margin-right: calc(-1 * (100vw - 100%));
 }
 
 body {
   font-family: 'Roboto', sans-serif;
   width: 100%;
+  max-width: 1440px;
   margin: 0 auto;
   background-color: #E5E5E5;
 }
