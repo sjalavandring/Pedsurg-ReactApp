@@ -1,13 +1,13 @@
 import './App.scss';
 import {useContext} from 'react'
-import {Header, Main, Footer, Directions} from './index.js'
+import {Header, HeaderMobile, Main, Footer, Directions} from './index.js'
 import {BrowserRouter,Routes, Route} from "react-router-dom";
-import {Publications, Mentions, Books} from './Components/Publications/Publications.js'
+import {Publications, Mentions, Books} from './Components/Publications/Publications.js';
 
 function App() {
   return (
     <BrowserRouter>
-      <Header />
+      <HeaderMobile/>
       <Routes>
         <Route path='/' element={<Main />} />
         <Route path='/directions' element={<Directions />} />

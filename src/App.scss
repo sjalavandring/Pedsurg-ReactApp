@@ -4,12 +4,20 @@
 
 @import "Components/Main/Main.scss";
 @import "Components/Main/MainMedia.scss";
+
 @import "Components/Header/Header.scss";
 @import "Components/Header/HeaderMedia.scss";
+@import "Components/Header/HeaderMobile.scss";
+
 @import "Components/Footer/Footer.scss";
+
 @import "Components/SliderMain/Slider.scss";
+@import "Components/SliderMain/SliderMedia.scss";
+
 @import "Components/Directions/Directions.scss";
+
 @import "Components/CardsList/CardsList.scss";
+
 @import "Components/Publications/Publications.scss";
 
 
@@ -22,8 +30,8 @@
 }
 
 html {
-  overflow-x: hidden;
-  // margin-right: calc(-1 * (100vw - 100%));
+  margin-right: calc(-1 * (100vw - 100%));
+  // overflow-x: hidden;
 }
 
 body {

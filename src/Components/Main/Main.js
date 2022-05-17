@@ -17,7 +17,7 @@ function Main() {
 	]
 
 	return (
-		<main className="main container">
+		<main className="main container" >
 			<SliderMain sliderData={sliderData} sliderSize={{width: "800px", height: "700px"}}/>
 		</main> 
 	)

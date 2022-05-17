@@ -23,7 +23,7 @@ function SliderMain(props) {	 //sliderData - массив объектов с и
 	return (
 		<div className="slider">	
 			<div className="slider-arrow arrow-left" draggable="false" onClick={prevSlide}>
-				<img className="arrow-inner" src={arrowLeft} alt="" height="40" draggable="false"/>
+				<img className="arrow-inner" src={arrowLeft} alt="" draggable="false"/>
 			</div>
 			<div className="slider-body">	
 				<div className="slider-slide" width={props.sliderSize.width}>	
@@ -36,7 +36,7 @@ function SliderMain(props) {	 //sliderData - массив объектов с и
 				</div>
 			</div>
 			<div className="slider-arrow arrow-right" onClick={nextSlide}>
-				<img className="arrow-inner" src={arrowRight} alt="" height="40" draggable="false"/>
+				<img className="arrow-inner" src={arrowRight} alt="" draggable="false"/>
 			</div>
 		</div>	
 	)

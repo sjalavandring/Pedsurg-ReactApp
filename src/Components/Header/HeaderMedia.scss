@@ -12,9 +12,29 @@
 	}
 	/* Landscape tablets and medium desktops */
 	@media (min-width: 992px) and (max-width: 1199px) {
+		.header-title {
+			font-size: 0.7rem;
+			align-self: center;
+		}
 
+		.logo__image {
+			height: 60px;
+		}
+
+		.header-contacts {
+			align-self: center;	
+			padding: 0 20px;
+			font-size: 14px;
+		}
+
+		.nav-menu {
+			display: flex;
+			justify-content: space-between;
+			padding: 15px 20px;
+		}
 	}
 	/* Portrait tablets and small desktops */
+	/*Меняется компонент Header*/
 	@media (min-width: 768px) and (max-width: 991px) { 
 
 	}

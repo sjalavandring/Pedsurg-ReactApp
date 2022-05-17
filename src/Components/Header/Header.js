@@ -34,7 +34,7 @@ function Header() {
 
 function HeaderTop(props) {
 	const logosList = props.logos.map((logo) => {
-		return <a key={logo.id} href={logo.href}><img className="logo__image" src={logo.link} alt="logo" height="80"/></a>
+		return <a key={logo.id} href={logo.href}><img className="logo__image" src={logo.link} alt="logo" /></a>
 	})			//Создание списка из логотипов
 
 	return (

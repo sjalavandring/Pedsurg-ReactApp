@@ -1,0 +1,26 @@
+.header-mobile {
+	display: flex;
+	justify-content: space-around;
+	background-color: #0066FF;
+	padding: 15px;
+
+}
+
+.burger	{
+	// display: flex;
+	// flex-direction: column;
+	padding: 22px;
+}
+
+.burger__item {
+	display: block;
+	height: 8px;
+	width: 50px;
+	background-color: #fff;
+	margin: 8px 0px;
+	border-radius: 30px;
+}
+
+.header-title--mobile {
+	color: #fff;
+}
