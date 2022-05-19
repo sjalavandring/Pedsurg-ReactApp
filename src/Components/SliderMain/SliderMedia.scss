@@ -22,11 +22,20 @@
 			height: 20px;
 			border-radius: 100px;
 		}
-
 	}
 	/* Landscape phones and portrait tablets */
 	@media (max-width: 767px) { 
-
+		.slider-body {
+			width: 500px;
+			margin: 0 10px;
+		}
+		.slider-points__item {
+			margin: 15px 10px;
+			border: 4px solid $basic-color;
+			width: 20px;
+			height: 20px;
+			border-radius: 100px;
+		}
 	}
 	/* Portrait phones and smaller */
 	@media (max-width: 480px) {

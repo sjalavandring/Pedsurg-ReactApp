@@ -3,11 +3,17 @@ import {useContext} from 'react'
 import {Header, HeaderMobile, Main, Footer, Directions} from './index.js'
 import {BrowserRouter,Routes, Route} from "react-router-dom";
 import {Publications, Mentions, Books} from './Components/Publications/Publications.js';
+import MediaQuery from 'react-responsive';
 
 function App() {
   return (
     <BrowserRouter>
-      <HeaderMobile/>
+      <MediaQuery minWidth={992}>
+        <Header/>
+      </MediaQuery>
+      <MediaQuery maxWidth={991}>
+        <HeaderMobile/>
+      </MediaQuery>
       <Routes>
         <Route path='/' element={<Main />} />
         <Route path='/directions' element={<Directions />} />

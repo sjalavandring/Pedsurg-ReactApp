@@ -1,3 +1,4 @@
+import MediaQuery from 'react-responsive';
 import SliderMain from '../SliderMain/Slider.js'
 import slide1 from "../../img/main-slider/slide1.jpg";
 import slide2 from "../../img/main-slider/slide2.jpg";
@@ -18,11 +19,17 @@ function Main() {
 
 	return (
 		<main className="main container" >
-			<SliderMain sliderData={sliderData} sliderSize={{width: "800px", height: "700px"}}/>
+			<MediaQuery maxWidth={767}>
+				<SliderMain sliderData={sliderData} sliderSize={{width: "500px", height: "500px"}}/>
+			</MediaQuery>		
+			<MediaQuery minWidth={768}>
+				<SliderMain sliderData={sliderData} sliderSize={{width: "800px", height: "700px"}}/>
+			</MediaQuery>
 		</main> 
 	)
 }
-		
+
+//Разный размер изображения в слайдере в зависимости от разрешения		
 
 export default Main;
 

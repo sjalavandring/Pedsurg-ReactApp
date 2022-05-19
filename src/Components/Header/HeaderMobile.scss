@@ -2,14 +2,11 @@
 	display: flex;
 	justify-content: space-around;
 	background-color: #0066FF;
-	padding: 15px;
-
+	// padding: 10px;
 }
 
 .burger	{
-	// display: flex;
-	// flex-direction: column;
-	padding: 22px;
+	padding: 25px;
 }
 
 .burger__item {
@@ -21,6 +18,13 @@
 	border-radius: 30px;
 }
 
+.logo__image--mobile {
+	height: 60px;
+	margin: 25px;
+}
+
 .header-title--mobile {
+	text-align: center;
+	font-size: 0.7em;
 	color: #fff;
 }
