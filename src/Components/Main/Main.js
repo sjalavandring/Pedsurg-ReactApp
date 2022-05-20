@@ -20,7 +20,7 @@ function Main() {
 	return (
 		<main className="main container" >
 			<MediaQuery maxWidth={767}>
-				<SliderMain sliderData={sliderData} sliderSize={{width: "500px", height: "500px"}}/>
+				<SliderMain sliderData={sliderData} sliderSize={{width: "450px", height: "600px"}}/>
 			</MediaQuery>		
 			<MediaQuery minWidth={768}>
 				<SliderMain sliderData={sliderData} sliderSize={{width: "800px", height: "700px"}}/>

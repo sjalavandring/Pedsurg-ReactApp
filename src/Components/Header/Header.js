@@ -3,6 +3,7 @@ import logo2 from "../../img/logo2.jpg"
 import logo3 from "../../img/logo3.jpg"
 import {BrowserRouter, Routes, Route, Link} from "react-router-dom";
 import {Footer} from '../../index.js'
+import navItems from '../../database/MainMenuDB.js';
 
 
 
@@ -13,16 +14,6 @@ function Header() {
 		{id: 3, link: logo2, href: "http://xn----9sbdbejx7bdduahou3a5d.xn--p1ai/"}
 	];
 
-	let navItems = [
-		{id: 1, text: "Главная", link: ""},
-		{id: 2, text: "Детская хирургия", link: "/surgery"},
-		{id: 3, text: "Основные направления работы", link: "/directions"},
-		{id: 4, text: "Научная деятельность", link: "/publications/mentions"},
-		{id: 5, text: "Библиотека", link: "/library"},
-		{id: 6, text: "Архив видео", link: "/archive"},
-		{id: 7, text: "Наши учителя", link: "/teachers"},
-		{id: 8, text: "О Нас", link: "/about"},
-	]
 	//При добавлении новых пунктов меню, добавлять Route в App.js
 	return (
 		<header className="header container">
