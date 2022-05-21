@@ -8,10 +8,10 @@ import MediaQuery from 'react-responsive';
 function App() {
   return (
     <BrowserRouter>
-      <MediaQuery minWidth={992}>
+      <MediaQuery minWidth={1200}>
         <Header/>
       </MediaQuery>
-      <MediaQuery maxWidth={991}>
+      <MediaQuery maxWidth={1199}>
         <HeaderMobile/>
       </MediaQuery>
       <Routes>

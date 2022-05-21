@@ -68,6 +68,18 @@ main {
   // height: 80vh;
 }
 
+.shadowBack {
+  position: fixed;
+  z-index: 0;
+  background-color:#000;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  opacity: 0.8;
+  overflow-x: hidden;
+}
+
 .inactive {
   display: none;
   visibility: hidden; 

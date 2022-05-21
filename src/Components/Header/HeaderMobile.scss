@@ -16,7 +16,7 @@
 	color: #fff;
 }
 
-.burger	{
+.header-burger	{
 	padding: 25px;
 }
 
@@ -40,11 +40,11 @@
 }
 
 .nav-buttons {
-	justify-content: right;
-}
+	}
 
 .nav-buttons-close {
 	position: relative;
+	margin: 30px 0 0 45px;
 	width: 52px;
 	height: 52px;
 	cursor: pointer;
@@ -71,11 +71,11 @@
 
 
 .nav-menu--mobile { 
-	margin-top: 30px;
+	margin-top: 10px;
 }
 
 .nav-menu__item--mobile {
 	padding: 20px 0;
 	font-size: 1.3em;
 	color: #fff !important;
-}	
+}

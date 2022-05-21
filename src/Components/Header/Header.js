@@ -35,7 +35,7 @@ function HeaderTop(props) {
 			</div>
 			<div className="header-title">
 				<h1>Детская торако-абдоминальная хирургия</h1>
-			</div>
+			</div>	
 			<div className="header-contacts">
 				<div className="header-contacts__item">Тел: +7 (916) 116-43-24</div>
 				<div className="header-contacts__item">Mail: trunov2000@mail.ru</div>
