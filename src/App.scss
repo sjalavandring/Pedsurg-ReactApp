@@ -19,6 +19,7 @@
 @import "Components/Directions/Directions.scss";
 
 @import "Components/CardsList/CardsList.scss";
+@import "Components/CardsList/CardsListMedia.scss";
 
 @import "Components/Publications/Publications.scss";
 
@@ -33,7 +34,6 @@
 
 html {
   margin-right: calc(-1 * (100vw - 100%));
-  // overflow-x: hidden;
 }
 
 body {

@@ -9,9 +9,12 @@ function HeaderMobile () {
 	let [isMenuActive, setMenuState] = useState(false);
 
 	let navList = navItems.map((item) => {
-		return <li className="nav-menu__item--mobile" key={item.id}><Link className="nav-menu__item" to={item.link}>{item.text}</Link></li>
+		return <li className="nav-menu__item--mobile" key={item.id} onClick={() => closeMobileMenu()}><Link className="nav-menu__item" to={item.link}>{item.text}</Link></li>
 	})
 
+	function closeMobileMenu () {
+		setMenuState(false);
+	}
 
 	return (
 		<header className="header-mobile container">
@@ -26,10 +29,9 @@ function HeaderMobile () {
 				<span className="burger__item"></span>
 				<span className="burger__item"></span>
 			</div>
-			<div className={(isMenuActive === true ? "shadowBack" : "")} onClick={() => setMenuState(false)}></div>
 			<div className={ "nav " + "nav--mobile " + (isMenuActive === true ? "" : "inactive ")}>
 				<div className="nav-buttons">
-					<div className="nav-buttons-close" onClick={() => setMenuState(false)}>
+					<div className="nav-buttons-close" onClick={() => closeMobileMenu()}>
 						<span className="nav-buttons-close__item"></span>
 						<span className="nav-buttons-close__item"></span>
 					</div>	
@@ -38,6 +40,7 @@ function HeaderMobile () {
 					{navList}
 				</ul>
 			</div>
+			<div className={"header-background " + (isMenuActive === true ? "shadowBack" : "")} onClick={() => closeMobileMenu()}></div>
 		</header>
 	)
 }

@@ -15,11 +15,20 @@
 		}
 	}
 	/* Portrait tablets and small desktops */
-	@media (min-width: 768px) and (max-width: 991px) { 
+	@media (min-width: 768px) and (max-width: 991px) {
 		.footer-copyright {
-			margin: 0 10px;
+			margin: 0 20px;
 			font-size: 12px;
 		}
+
+		.footer-address {
+			display: none;
+		}
+
+		.footer-socials {
+			margin: 0 20px;
+		}
+
 		.footer-socials__item {
 			height: 35px;
 			&:hover {
@@ -34,6 +43,11 @@
 			margin: 0 10px;
 			font-size: 12px;
 		}
+
+		.footer-address {
+			display: none;
+		}
+
 		.footer-socials__item {
 			height: 35px;
 			margin: 0 7px;

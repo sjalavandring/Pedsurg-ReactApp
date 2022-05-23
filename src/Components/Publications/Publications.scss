@@ -25,6 +25,10 @@ $basic-color: #0066FF;
 	padding: 30px 0 75px;
 }
 
+.main-publications-content{
+	display: flex;
+	justify-content: center;
+}
 
 .publications-chapters__item{
 	max-width: 150px;
@@ -76,7 +80,9 @@ $basic-color: #0066FF;
 
 .publications-books-content{
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: center;
+	
 }
 
 .book {

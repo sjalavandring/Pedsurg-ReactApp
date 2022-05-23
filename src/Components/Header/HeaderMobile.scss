@@ -5,6 +5,10 @@
 	// padding: 10px;
 }
 
+.header-background {
+	position: absolute;
+}
+
 .logo__image--mobile {
 	height: 60px;
 	margin: 25px;
@@ -31,16 +35,36 @@
 
 .nav--mobile {
 	position: absolute;
+	z-index: 2;
+	top: 0px;
 	right: 0px;
 	text-align: center;
 	min-width: 50vw;
 	height: 100vh;
 	background-color: $basic-color;
 	border: 5px solid #fff;
+	animation-name: menuMobileMoving;
+	animation-duration: 1000ms ;
+	transition-timing-function: ease-out;
+	animation-iteration-count: 1;
+	animation-direction: alternate;
+	// transform-box: content-box;
+}
+
+@keyframes menuMobileMoving{
+	0% {
+		overflow: hidden;
+		transform: translate(300px, 0px);	
+	}
+	100% {
+		overflow: hidden;
+		transform: translate(0px, 0px)
+	}
 }
 
 .nav-buttons {
-	}
+	
+}
 
 .nav-buttons-close {
 	position: relative;
@@ -79,3 +103,4 @@
 	font-size: 1.3em;
 	color: #fff !important;
 }
+
