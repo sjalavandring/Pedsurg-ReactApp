@@ -4,24 +4,39 @@
 	}
 	/* Landscape tablets and medium desktops */
 	@media (min-width: 992px) and (max-width: 1199px) {
-
-	}
-	/* Portrait tablets and small desktops */
-	@media (max-width: 991px) { 
-		.cards-list__item {
-			flex-direction: column;
-		}
-		.cards-list__item {
-			margin: 60px 20px;
+		.cards-list-elem {
 			font-size: 1.6em;
 		}
 		.cards-list__image {
 			margin:40px;
 		}
+		.cards-list__item {
+			margin: 40px;
+		}
+	}
+	/* Portrait tablets and small desktops */
+	@media (max-width: 991px) {
+		.cards-list-elem {
+			display: flex;
+			margin: 40px auto;
+			flex-flow: column;
+			text-align: center;
+		} 
+		.cards-list-elem {
+			font-size: 1.6em;
+		}
+		.cards-list__image {
+			margin:40px;
+		}
+		.cards-list__item {
+			margin: 30px;
+		}
 	}
 	/* Landscape phones and portrait tablets */
 	@media (max-width: 767px) { 
-
+		.cards-list__image {
+			margin:20px;
+		}
 	}
 	/* Portrait phones and smaller */
 	@media (max-width: 480px) {

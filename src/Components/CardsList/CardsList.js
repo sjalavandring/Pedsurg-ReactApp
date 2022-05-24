@@ -1,13 +1,23 @@
 import {Header, Main, Footer, Directions, Publications} from '../../index.js';
 import MediaQuery from 'react-responsive';
-import {useState} from 'react'
+// import {useState} from 'react'
+import React, { useLayoutEffect, useState } from 'react';
 
 function CardList(props) {
-	let [innerWidth, setInnerWidth] = useState(window.screen.availWidth);
+	function useInnerWidth () {
+		let [width, setWidth] = useState(window.innerWidth);
+		useLayoutEffect(() => {
+			window.addEventListener('resize', () => setWidth(window.innerWidth));
+		}, [])
+		return width;
+	}
+	// Функция useInnerWidth возвращает динамически меняющуюся ширину экрана, под которую подстраивается рендер компонента 
+
+	let innerWidth = useInnerWidth();
 	let cardsListInfo = props.cardsInfo.map((item, id) => {
 		if ((item.id % 2 == 1) || (innerWidth < 991)) {
 			return (
-				<div className="cards-list__item">
+				<div className="cards-list-elem" key={id}>
 					<CardsListImage cardsInfo={props.cardsInfo[id]}/>
 					<CardsListDescript cardsInfo={props.cardsInfo[id]}/>
 				</div>
@@ -15,7 +25,7 @@ function CardList(props) {
 		} else 
 		if (item.id % 2 == 0)  {
 			return (
-				<div className="cards-list__item">
+				<div className="cards-list-elem" key={id}>
 					<CardsListDescript cardsInfo={props.cardsInfo[id]}/>
 					<CardsListImage cardsInfo={props.cardsInfo[id]}/>
 				</div>
@@ -23,7 +33,7 @@ function CardList(props) {
 		}		
 	})
 	return (
-		<div className="cards-list" onResize={() => setInnerWidth(window.screen.availWidth)}>
+		<div className="cards-list">
 			{cardsListInfo}
 		</div>
 	)
@@ -31,13 +41,13 @@ function CardList(props) {
 
 function CardsListImage (props) {
 	return (
-		<img className="cards-list__image" src={props.cardsInfo.link} alt="illustration" width="350px"/>	
+		<img className="cards-list__image cards-list__item" src={props.cardsInfo.link} alt="illustration"/>	
 	)
 }
 
 function CardsListDescript (props) {
 	return (
-		<div className="cards-list__descript">
+		<div className="cards-list__descript cards-list__item">
 			{props.cardsInfo.text}
 		</div>
 	)

@@ -1,14 +1,13 @@
-.cards-list__item {
+.cards-list-elem {
 	display: flex;
 	align-items: center;
 	max-width: 1400px;
-	widows: 100%;
 	margin: 60px auto;
 	justify-content: space-around;
 }
 
 .cards-list__image {
-	margin: 10px;
+	width: 350px;
 }
 
 .cards-list__descript {
