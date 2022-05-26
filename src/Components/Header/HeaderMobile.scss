@@ -34,7 +34,7 @@
 }
 
 .nav--mobile {
-	position: absolute;
+	position: fixed;
 	z-index: 2;
 	top: 0px;
 	right: 0px;
@@ -44,7 +44,7 @@
 	background-color: $basic-color;
 	border: 5px solid #fff;
 	animation-name: menuMobileMoving;
-	animation-duration: 1000ms ;
+	animation-duration: 400ms ;
 	transition-timing-function: ease-out;
 	animation-iteration-count: 1;
 	animation-direction: alternate;
@@ -55,6 +55,7 @@
 		overflow: hidden;
 		transform: translate(300px, 0px);	
 	}
+
 	100% {
 		overflow: hidden;
 		transform: translate(0px, 0px)

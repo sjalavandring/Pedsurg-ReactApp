@@ -24,7 +24,7 @@ function HeaderMobile () {
 			<div className="header-title header-title--mobile">
 				<h1>Детская торако-абдоминальная хирургия</h1>
 			</div>
-			<div className="header-burger" id="outerBurger" onClick={() => setMenuState(!isMenuActive)}>
+			<div className="header-burger" id="outerBurger" onClick={() => setMenuState(!isMenuActive)} tabindex="0">
 				<span className="burger__item"></span>
 				<span className="burger__item"></span>
 				<span className="burger__item"></span>

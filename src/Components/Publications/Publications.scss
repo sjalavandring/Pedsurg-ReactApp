@@ -7,7 +7,7 @@ $basic-color: #0066FF;
 
 .main-publications{
 	background-color: #fff;
-	background: url(../../img/publications/books-background.jpg);
+	// background: url(../../img/publications/books-background.jpg);
 }
 
 .publication__year {
@@ -98,7 +98,7 @@ $basic-color: #0066FF;
 
 
 .book-zoom-info {
-	position: absolute;
+	position: fixed;
 	display: flex;
 	top: 0px;
 	bottom: 0px;
@@ -125,6 +125,10 @@ $basic-color: #0066FF;
 		transform: translate(0px, 0px);
 		opacity: 1;
 	}
+}
+
+.book__img {
+	height: 300px;
 }
 
 .book-zoom__description{
