@@ -3,7 +3,7 @@ import MediaQuery from 'react-responsive';
 // import {useState} from 'react'
 import React, { useLayoutEffect, useState } from 'react';
 
-function CardList(props) {
+function CardsList(props) {
 	function useInnerWidth () {
 		let [width, setWidth] = useState(window.innerWidth);
 		useLayoutEffect(() => {
@@ -15,19 +15,24 @@ function CardList(props) {
 
 	let innerWidth = useInnerWidth();
 	let cardsListInfo = props.cardsInfo.map((item, id) => {
+		props.setChildProps(props.cardsInfo[id]);
 		if ((item.id % 2 == 1) || (innerWidth < 991)) {
+			let test1 = props.cardsInfo[id];
 			return (
 				<div className="cards-list-elem" key={id}>
 					<CardsListImage cardsInfo={props.cardsInfo[id]}/>
 					<CardsListDescript cardsInfo={props.cardsInfo[id]}/>
+					{props.children}
 				</div>
 			) 
 		} else 
 		if (item.id % 2 == 0)  {
+			let test2 = props.cardsInfo[id];
 			return (
 				<div className="cards-list-elem" key={id}>
 					<CardsListDescript cardsInfo={props.cardsInfo[id]}/>
 					<CardsListImage cardsInfo={props.cardsInfo[id]}/>
+					{props.children}
 				</div>
 			)
 		}		
@@ -35,6 +40,7 @@ function CardList(props) {
 	return (
 		<div className="cards-list">
 			{cardsListInfo}
+			
 		</div>
 	)
 }
@@ -53,4 +59,8 @@ function CardsListDescript (props) {
 	)
 }
 
-export default CardList;
+// function CardsListRight (props) {
+	
+// }
+
+export default CardsList;
