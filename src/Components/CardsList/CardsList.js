@@ -15,19 +15,25 @@ function CardList(props) {
 
 	let innerWidth = useInnerWidth();
 	let cardsListInfo = props.cardsInfo.map((item, id) => {
+		props.setCardsListProps(props.cardsInfo[id])
+		console.log(props.cardsInfo[id])
 		if ((item.id % 2 == 1) || (innerWidth < 991)) {
 			return (
 				<div className="cards-list-elem" key={id}>
-					<CardsListImage cardsInfo={props.cardsInfo[id]}/>
-					<CardsListDescript cardsInfo={props.cardsInfo[id]}/>
+{/*					<CardsListImage cardsInfo={props.cardsInfo[id]}/>
+					<CardsListDescript cardsInfo={props.cardsInfo[id]}/>*/}
+					{props.test1}
+					{props.test2}
 				</div>
 			) 
 		} else 
 		if (item.id % 2 == 0)  {
 			return (
 				<div className="cards-list-elem" key={id}>
-					<CardsListDescript cardsInfo={props.cardsInfo[id]}/>
-					<CardsListImage cardsInfo={props.cardsInfo[id]}/>
+{/*					<CardsListDescript cardsInfo={props.cardsInfo[id]}/>
+					<CardsListImage cardsInfo={props.cardsInfo[id]}/>*/}
+					{props.test1}
+					{props.test2}
 				</div>
 			)
 		}		
@@ -49,6 +55,7 @@ function CardsListDescript (props) {
 	return (
 		<div className="cards-list__descript cards-list__item">
 			{props.cardsInfo.text}
+
 		</div>
 	)
 }
