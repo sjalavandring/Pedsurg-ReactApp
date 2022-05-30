@@ -22,8 +22,7 @@ function CardList(props) {
 				<div className="cards-list-elem" key={id}>
 {/*					<CardsListImage cardsInfo={props.cardsInfo[id]}/>
 					<CardsListDescript cardsInfo={props.cardsInfo[id]}/>*/}
-					{props.test1}
-					{props.test2}
+					{props.even}
 				</div>
 			) 
 		} else 
@@ -32,8 +31,7 @@ function CardList(props) {
 				<div className="cards-list-elem" key={id}>
 {/*					<CardsListDescript cardsInfo={props.cardsInfo[id]}/>
 					<CardsListImage cardsInfo={props.cardsInfo[id]}/>*/}
-					{props.test1}
-					{props.test2}
+					{props.odd}
 				</div>
 			)
 		}		

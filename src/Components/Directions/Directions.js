@@ -5,7 +5,7 @@ import directionsDB from '../../database/DirectionsDB.js';
 function Directions() {
 	return (
 		<main className="main-directions container">
-			<CardsList cardsInfo={directionsDB}/>
+			{/*<CardsList cardsInfo={directionsDB}/>*/}
 		</main>	
 	)
 }

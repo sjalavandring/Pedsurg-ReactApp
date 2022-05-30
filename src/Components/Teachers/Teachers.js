@@ -1,29 +1,37 @@
-import {CardsList, CardsListImage, CardsListDescript} from '../../index.js';
-import teachersDB from '../../database/DirectionsDB.js'; 
+import {CardsList, CardsListImage, CardsListDescript, CardsListTitle} from '../../index.js';
+import teachersDB from '../../database/TeachersDB.js'; 
 import {useState} from 'react'
 
 function Teachers() {
 	let [cardsListProps, setCardsListProps] = useState(teachersDB[0])
-	
-	function Test1(props) {
+	// console.log(typeof(cardsListProps))
+	function TeachersEven(props) {
 		return (
-			<div className="cards-list__descript cards-list__item">
-				{cardsListProps.text}
-			</div>
+			<>
+				<CardsListImage cardsListProps={cardsListProps}/>
+				<div className="cards-list-descript cards-list-inner">
+					<CardsListTitle cardsListProps={cardsListProps}/>
+					<CardsListDescript cardsListProps={cardsListProps}/>
+				</div>	
+			</>
 		)
 	}
 
-	function Test2(props) {
+	function TeachersOdd(props) {
 		return (
-			<div className="cards-list__descript cards-list__item">
-				{cardsListProps.text}
-			</div>
+			<>
+				<div className="cards-list-descript cards-list-inner">
+					<CardsListTitle cardsListProps={cardsListProps}/>
+					<CardsListDescript cardsListProps={cardsListProps}/>
+				</div>
+				<CardsListImage cardsListProps={cardsListProps}/>
+			</>
 		)
 	}
 	
 	return (
 		<main className="main-teachers container">
-			<CardsList cardsInfo={teachersDB} test1={<Test1/>} test2={<Test2/>} setCardsListProps={setCardsListProps()}/>
+			<CardsList cardsInfo={teachersDB} even={<TeachersEven/>} odd={<TeachersOdd/>} setCardsListProps={setCardsListProps}/>
 		</main>	
 	)
 }

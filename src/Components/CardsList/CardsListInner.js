@@ -1,15 +1,20 @@
 function CardsListImage (props) {
 	return (
-		<img className="cards-list-image cards-list-inner" src={props.cardsInfo.link} alt="illustration"/>	
+		<img className="cards-list-image cards-list-inner" src={props.cardsListProps.link} alt="illustration"/>	
 	)
 }
 
 function CardsListDescript (props) {
 	return (
-		<div className="cards-list-descript cards-list-inner">
-			{props.cardsInfo.text}
-		</div>
+		<p className="cards-list-inner">{props.cardsListProps.text}</p>
 	)
 }
 
-export {CardsListImage, CardsListDescript};
+function CardsListTitle(props) {
+	return (
+		<strong className="cards-list-inner">{props.cardsListProps.title}</strong>
+	)
+}
+
+
+export {CardsListImage, CardsListDescript, CardsListTitle};
