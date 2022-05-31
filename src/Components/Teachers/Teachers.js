@@ -3,15 +3,15 @@ import teachersDB from '../../database/TeachersDB.js';
 import {useState} from 'react'
 
 function Teachers() {
-	let [cardsListProps, setCardsListProps] = useState(teachersDB[0])
+	let [teachersListProps, setTeachersListProps] = useState(teachersDB[0])
 	// console.log(typeof(cardsListProps))
 	function TeachersEven(props) {
 		return (
 			<>
-				<CardsListImage cardsListProps={cardsListProps}/>
+				<CardsListImage cardsListProps={teachersListProps}/>
 				<div className="cards-list-descript cards-list-inner">
-					<CardsListTitle cardsListProps={cardsListProps}/>
-					<CardsListDescript cardsListProps={cardsListProps}/>
+					<CardsListTitle cardsListProps={teachersListProps}/>
+					<CardsListDescript cardsListProps={teachersListProps}/>
 				</div>	
 			</>
 		)
@@ -21,17 +21,17 @@ function Teachers() {
 		return (
 			<>
 				<div className="cards-list-descript cards-list-inner">
-					<CardsListTitle cardsListProps={cardsListProps}/>
-					<CardsListDescript cardsListProps={cardsListProps}/>
+					<CardsListTitle cardsListProps={teachersListProps}/>
+					<CardsListDescript cardsListProps={teachersListProps}/>
 				</div>
-				<CardsListImage cardsListProps={cardsListProps}/>
+				<CardsListImage cardsListProps={teachersListProps}/>
 			</>
 		)
 	}
 	
 	return (
 		<main className="main-teachers container">
-			<CardsList cardsInfo={teachersDB} even={<TeachersEven/>} odd={<TeachersOdd/>} setCardsListProps={setCardsListProps}/>
+			<CardsList cardsInfo={teachersDB} even={<TeachersEven/>} odd={<TeachersOdd/>} setCardsListProps={setTeachersListProps}/>
 		</main>	
 	)
 }

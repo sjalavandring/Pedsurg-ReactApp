@@ -6,13 +6,13 @@ function CardsListImage (props) {
 
 function CardsListDescript (props) {
 	return (
-		<p className="cards-list-inner">{props.cardsListProps.text}</p>
+		<p className="cards-list-inner cards-list-text">{props.cardsListProps.text}</p>
 	)
 }
 
 function CardsListTitle(props) {
 	return (
-		<strong className="cards-list-inner">{props.cardsListProps.title}</strong>
+		<h4 className="cards-list-inner cards-list-title">{props.cardsListProps.title}</h4>
 	)
 }
 

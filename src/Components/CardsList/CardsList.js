@@ -4,6 +4,9 @@ import MediaQuery from 'react-responsive';
 import React, { useLayoutEffect, useState } from 'react';
 
 function CardList(props) {
+	/*В пропсы CardsKist передается cardsInfo - массив с данными для заполнения компонентов, четный и нечетный компоненты even и odd , 
+	а также метод setCardsListProps, который меняет внутреннее состояние компонентов, которые встраиваются в CardsList
+	*/
 	function useInnerWidth () {
 		let [width, setWidth] = useState(window.innerWidth);
 		useLayoutEffect(() => {

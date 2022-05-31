@@ -7,10 +7,10 @@
 		.cards-list-elem {
 			font-size: 1.6em;
 		}
-		.cards-list__image {
+		.cards-list-image {
 			margin:40px;
 		}
-		.cards-list__item {
+		.cards-list-inner {
 			margin: 40px;
 		}
 	}
@@ -25,16 +25,16 @@
 		.cards-list-elem {
 			font-size: 1.6em;
 		}
-		.cards-list__image {
+		.cards-list-image {
 			margin:40px;
 		}
-		.cards-list__item {
+		.cards-list-item {
 			margin: 30px;
 		}
 	}
 	/* Landscape phones and portrait tablets */
 	@media (max-width: 767px) { 
-		.cards-list__image {
+		.cards-list-image {
 			margin:20px;
 		}
 	}
