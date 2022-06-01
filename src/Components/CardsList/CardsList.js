@@ -22,18 +22,14 @@ function CardList(props) {
 		console.log(props.cardsInfo[id])
 		if ((item.id % 2 == 1) || (innerWidth < 991)) {
 			return (
-				<div className="cards-list-elem" key={id}>
-{/*					<CardsListImage cardsInfo={props.cardsInfo[id]}/>
-					<CardsListDescript cardsInfo={props.cardsInfo[id]}/>*/}
+				<div className="cards-list-container" key={id}>
 					{props.even}
 				</div>
 			) 
 		} else 
 		if (item.id % 2 == 0)  {
 			return (
-				<div className="cards-list-elem" key={id}>
-{/*					<CardsListDescript cardsInfo={props.cardsInfo[id]}/>
-					<CardsListImage cardsInfo={props.cardsInfo[id]}/>*/}
+				<div className="cards-list-container" key={id}>
 					{props.odd}
 				</div>
 			)
