@@ -17,9 +17,9 @@ function CardList(props) {
 	// Функция useInnerWidth возвращает динамически меняющуюся ширину экрана, под которую подстраивается рендер компонента 
 
 	let innerWidth = useInnerWidth();
-	let cardsListInfo = props.cardsInfo.map((item, id) => {
+	let cardsListInfo = props.cardsInfo.map((item, id) => {	
 		props.setCardsListProps(props.cardsInfo[id])
-		console.log(props.cardsInfo[id])
+		// console.log(props.cardsInfo[id])
 		if ((item.id % 2 == 1) || (innerWidth < 991)) {
 			return (
 				<div className="cards-list-container" key={id}>
@@ -52,7 +52,6 @@ function CardsListDescript (props) {
 	return (
 		<div className="cards-list__descript cards-list__item">
 			{props.cardsInfo.text}
-
 		</div>
 	)
 }

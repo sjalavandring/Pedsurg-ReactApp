@@ -5,18 +5,21 @@ import dir3 from "../img/DirectionsCardsList/dir3.jpg";
 let directionsDB =   [
 				{
 					"id": 1,
+					"name": "Name 1",
 					"link": dir1,
-					"text": "Lorem, ipsum dolor sit amet consectetur adipisicing, elit. Temporibus incidunt ipsam quo harum fugit expedita, rem id, autem error tempora minus repellat obcaecati asperiores ipsum rerum dolore aspernatur cum minima?Lorem, ipsum dolor sit amet consectetur adipisicing, elit. Temporibus incidunt ipsam quo harum fugit expedita, rem id, autem error tempora minus repellat obcaecati asperiores ipsum rerum dolore aspernatur cum minima?"	
+					"text": "1Lorem, ipsum dolor sit amet consectetur adipisicing, elit. Temporibus incidunt ipsam quo harum fugit expedita, rem id, autem error tempora minus repellat obcaecati asperiores ipsum rerum dolore aspernatur cum minima?Lorem, ipsum dolor sit amet consectetur adipisicing, elit. Temporibus incidunt ipsam quo harum fugit expedita, rem id, autem error tempora minus repellat obcaecati asperiores ipsum rerum dolore aspernatur cum minima?"	
 				},
 				{
 					"id": 2,
+					"name": "Name 2",
 					"link": dir2,
-					"text": "Lorem, ipsum dolor sit amet consectetur adipisicing, elit. Temporibus incidunt ipsam quo harum fugit expedita, rem id, autem error tempora minus repellat obcaecati asperiores ipsum rerum dolore aspernatur cum minima?Lorem, ipsum dolor sit amet consectetur adipisicing, elit. Temporibus incidunt ipsam quo harum fugit expedita, rem id, autem error tempora minus repellat obcaecati asperiores ipsum rerum dolore aspernatur cum minima? Lorem, ipsum dolor sit amet consectetur adipisicing, elit. Temporibus incidunt ipsam quo harum fugit expedita, rem id, autem error tempora minus repellat obcaecati asperiores ipsum rerum dolore aspernatur cum minima?"	
+					"text": "2Lorem, ipsum dolor sit amet consectetur adipisicing, elit. Temporibus incidunt ipsam quo harum fugit expedita, rem id, autem error tempora minus repellat obcaecati asperiores ipsum rerum dolore aspernatur cum minima?Lorem, ipsum dolor sit amet consectetur adipisicing, elit. Temporibus incidunt ipsam quo harum fugit expedita, rem id, autem error tempora minus repellat obcaecati asperiores ipsum rerum dolore aspernatur cum minima? Lorem, ipsum dolor sit amet consectetur adipisicing, elit. Temporibus incidunt ipsam quo harum fugit expedita, rem id, autem error tempora minus repellat obcaecati asperiores ipsum rerum dolore aspernatur cum minima?"	
 				},
 				{
 					"id": 3,
+					"name": "Name 3",
 					"link": dir3,
-					"text": "Lorem, ipsum dolor sit amet consectetur adipisicing, elit. Temporibus incidunt ipsam quo harum fugit expedita, rem id, autem error tempora minus repellat obcaecati asperiores ipsum rerum dolore aspernatur cum minima?Lorem, ipsum dolor sit amet consectetur adipisicing, elit. Temporibus incidunt ipsam quo harum fugit expedita, rem id, autem error tempora minus repellat obcaecati asperiores ipsum rerum dolore aspernatur cum minima?"
+					"text": "3Lorem, ipsum dolor sit amet consectetur adipisicing, elit. Temporibus incidunt ipsam quo harum fugit expedita, rem id, autem error tempora minus repellat obcaecati asperiores ipsum rerum dolore aspernatur cum minima?Lorem, ipsum dolor sit amet consectetur adipisicing, elit. Temporibus incidunt ipsam quo harum fugit expedita, rem id, autem error tempora minus repellat obcaecati asperiores ipsum rerum dolore aspernatur cum minima?"
 				}
 			]
 
