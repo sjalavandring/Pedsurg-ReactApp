@@ -22,9 +22,6 @@
 @import "Components/CardsList/CardsListMedia.scss";
 
 @import "Components/Publications/Publications.scss";
-@import "Components/Publications/PublicationsMedia.scss";
-
-@import "Components/Teachers/Teachers.scss";
 
 
 
@@ -37,7 +34,6 @@
 
 html {
   margin-right: calc(-1 * (100vw - 100%));
-  overflow-x: hidden;
 }
 
 body {
@@ -46,7 +42,6 @@ body {
   max-width: 1440px;
   margin: 0 auto;
   background-color: #E5E5E5;
-  overflow: hidden;
 }
 
 

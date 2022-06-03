@@ -10,8 +10,11 @@ export {default as Main} from './Components/Main/Main.js'
 export {default as Footer} from './Components/Footer/Footer.js'
 export {default as Directions} from './Components/Directions/Directions.js'
 export {default as CardsList} from './Components/CardsList/CardsList.js'
+<<<<<<< HEAD
 export {CardsListImage, CardsListDescript} from './Components/CardsList/CardsListInner.js'
 export {default as Teachers} from './Components/Teachers/Teachers.js'
+=======
+>>>>>>> parent of a95f044 (Небольшие доработки)
 // import {Publications, Test1, Test2} from './Components/Publications/Publications.js'
 
 ReactDOM.render(

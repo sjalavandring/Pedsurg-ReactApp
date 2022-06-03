@@ -85,7 +85,7 @@ function ZoomBook(props) {
 function BookInformation (props) {
 	return (
 		<div className={"book-zoom-info " + (!props.isZoomed ? "inactive" : "")}> {/*Передаю пропс из Books с состоянием, чтобы понять, активно ли окно BookInformation*/}
-			<div className="book-zoom__img book-zoom__item"><img className="book__img" src={props.activeBook.link} alt="logo"/></div>
+			<div className="book-zoom__img book-zoom__item"><img className="book__img" src={props.activeBook.link} alt="logo" height="330"/></div>
 			<div className="book-zoom__description book-zoom__item">{props.activeBook.description}</div>
 		</div>	
 	)	
