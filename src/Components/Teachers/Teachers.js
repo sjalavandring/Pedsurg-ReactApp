@@ -4,7 +4,7 @@ import {useState} from 'react'
 
 function Teachers() {
 	let [teachersListProps, setTeachersListProps] = useState(teachersDB[0])
-	// console.log(typeof(cardsListProps))
+	// console.log(teachersListProps)
 	function TeachersEven(props) {
 		return (
 			<div className="cards-list-elem">

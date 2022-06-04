@@ -1,7 +1,7 @@
 import {Header, Main, Footer, Directions, Publications} from '../../index.js';
 import MediaQuery from 'react-responsive';
 // import {useState} from 'react'
-import React, { useLayoutEffect, useState } from 'react';
+import React, { useLayoutEffect, useState, useRef } from 'react';
 
 function CardList(props) {
 	/*В пропсы CardsKist передается cardsInfo - массив с данными для заполнения компонентов, четный и нечетный компоненты even и odd , 
@@ -18,8 +18,12 @@ function CardList(props) {
 
 	let innerWidth = useInnerWidth();
 	let cardsListInfo = props.cardsInfo.map((item, id) => {	
-		props.setCardsListProps(props.cardsInfo[id])
+		props.setCardsListProps.current = props.cardsInfo[id];
+		console.log(props.setCardsListProps.current)
 		// console.log(props.cardsInfo[id])
+		console.log(id)
+		// console.log(props.cardsInfo[id])
+		// console.log(1)
 		if ((item.id % 2 == 1) || (innerWidth < 991)) {
 			return (
 				<div className="cards-list-container" key={id}>
@@ -38,20 +42,6 @@ function CardList(props) {
 	return (
 		<div className="cards-list">
 			{cardsListInfo}
-		</div>
-	)
-}
-
-function CardsListImage (props) {
-	return (
-		<img className="cards-list__image cards-list__item" src={props.cardsInfo.link} alt="illustration"/>	
-	)
-}
-
-function CardsListDescript (props) {
-	return (
-		<div className="cards-list__descript cards-list__item">
-			{props.cardsInfo.text}
 		</div>
 	)
 }

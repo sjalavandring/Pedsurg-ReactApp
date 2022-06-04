@@ -17,9 +17,8 @@ function CardsListTitle(props) {
 }
 
 function CardsListDropdown(props) {
-	let test = props.cardsListProps.name;
 	return (
-		<div className="dropdown__text">{test}</div>
+		<div className="dropdown__text">{props.cardsListProps.name}</div>
 	)
 }
 

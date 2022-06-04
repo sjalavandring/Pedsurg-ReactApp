@@ -18,7 +18,7 @@
 	max-width: 700px;
 	margin: 0 40px;
 	font-family: Lato, sans-serif;
-	font-size: 18px;
+	font-size: 20px;
 }
 
 .cards-list-title {
@@ -35,10 +35,18 @@
 }
 
 .dropdown__img {
-	height: 25px;
+	height: 20px;
 	margin-right: 25px;
+	transition: transform 400ms;
 }
 
+.dropdown__img--active {
+	transform: rotate(90deg);
+	// animation-name: dropdownOpen;
+	// animation-duration: 400ms;
+	// animation-direction: reverse;
+	// transform: rotate(90deg);
+}
 
 .dropdown__text {
 	font-size: 2em;
@@ -49,4 +57,18 @@
 	justify-content: space-between;
 	align-items: center;
 	margin: 40px 0;
+	animation-name: showListElem;
+	animation-duration: 500ms;
+}
+
+
+@keyframes showListElem {
+	0% {
+		position: relative;
+		top: -50px;
+	}
+	100% {
+		position: relative;
+		top: 0px;
+	}
 }
