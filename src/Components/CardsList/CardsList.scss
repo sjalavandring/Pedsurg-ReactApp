@@ -37,7 +37,7 @@
 .dropdown__img {
 	height: 20px;
 	margin-right: 25px;
-	transition: transform 400ms;
+	transition: transform 200ms;
 }
 
 .dropdown__img--active {
@@ -58,7 +58,7 @@
 	align-items: center;
 	margin: 40px 0;
 	animation-name: showListElem;
-	animation-duration: 500ms;
+	animation-duration: 300ms;
 }
 
 
