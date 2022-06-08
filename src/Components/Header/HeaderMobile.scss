@@ -1,8 +1,9 @@
 .header-mobile {
+	position: sticky;
+  	top: 0px;
 	display: flex;
 	justify-content: space-around;
 	background-color: $basic-color;
-	// padding: 10px;
 }
 
 .header-background {

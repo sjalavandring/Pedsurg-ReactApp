@@ -1,17 +1,19 @@
-import {CardsList, CardsListImage, CardsListDescript, CardsListTitle} from '../../index.js';
+import {CardsList, CardsListImage, CardsListDescript, CardsListTitle, useInnerWidth} from '../../index.js';
 import teachersDB from '../../database/TeachersDB.js'; 
 import {useState} from 'react'
 
+
 function Teachers() {
 	let [teachersListProps, setTeachersListProps] = useState(teachersDB[0])
+	let innerWidth = useInnerWidth();
 	// console.log(teachersListProps)
 	function TeachersEven(props) {
 		return (
 			<div className="cards-list-elem">
-				<CardsListImage cardsListProps={teachersListProps}/>
+				<CardsListImage cardsListProps={props.teachersListProps}/>
 				<div className="cards-list-descript cards-list-inner">
-					<CardsListTitle cardsListProps={teachersListProps}/>
-					<CardsListDescript cardsListProps={teachersListProps}/>
+					<CardsListTitle cardsListProps={props.teachersListProps}/>
+					<CardsListDescript cardsListProps={props.teachersListProps}/>
 				</div>	
 			</div>
 		)
@@ -21,17 +23,34 @@ function Teachers() {
 		return (
 			<div className="cards-list-elem">
 				<div className="cards-list-descript cards-list-inner">
-					<CardsListTitle cardsListProps={teachersListProps}/>
-					<CardsListDescript cardsListProps={teachersListProps}/>
+					<CardsListTitle cardsListProps={props.teachersListProps}/>
+					<CardsListDescript cardsListProps={props.teachersListProps}/>
 				</div>
-				<CardsListImage cardsListProps={teachersListProps}/>
+				<CardsListImage cardsListProps={props.teachersListProps}/>
 			</div>
 		)
 	}
 	
+	let teachersListInfo = teachersDB.map((item, id) => {	
+		if ((item.id % 2 == 1) || (innerWidth < 991)) {
+			return (
+				<div className="cards-list-container" key={id}>
+					<TeachersEven teachersListProps={teachersDB[id]}/>
+				</div>
+			) 
+		} else 
+		if (item.id % 2 == 0)  {
+			return (
+				<div className="cards-list-container" key={id}>
+					<TeachersOdd teachersListProps={teachersDB[id]}/>
+				</div>
+			)
+		}	
+	})
+
 	return (
 		<main className="main-teachers container">
-			<CardsList cardsInfo={teachersDB} even={<TeachersEven/>} odd={<TeachersOdd/>} setCardsListProps={setTeachersListProps}/>
+			<CardsList cardsListInfo={teachersListInfo}/>
 		</main>	
 	)
 }
