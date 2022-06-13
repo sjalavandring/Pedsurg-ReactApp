@@ -15,7 +15,7 @@ function Directions() {
 					<img className={"dropdown__img " + (cardsListVisibility == true ? "dropdown__img--active" : "dropdown__img--inactive")} src={directionsArrow}/> 
 					<CardsListDropdown cardsListProps={props.directionsListProps}/>
 				</div>
-				<div className={"cards-list-elem " + (cardsListVisibility == true ? "cards-list-elem--active" : "inactive")}>
+				<div className={"cards-list-elem directions-elem " + (cardsListVisibility == true ? "cards-list-elem--active" : "inactive")}>
 					<CardsListImage cardsListProps={props.directionsListProps}/>
 					<div className="cards-list-descript cards-list-inner">
 						<CardsListTitle cardsListProps={props.directionsListProps}/>

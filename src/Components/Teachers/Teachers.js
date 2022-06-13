@@ -21,7 +21,7 @@ function Teachers() {
 
 	function TeachersOdd(props) {
 		return (
-			<div className="cards-list-elem">
+			<div className="cards-list-elem teachers-elem">
 				<div className="cards-list-descript cards-list-inner">
 					<CardsListTitle cardsListProps={props.teachersListProps}/>
 					<CardsListDescript cardsListProps={props.teachersListProps}/>

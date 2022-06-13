@@ -23,9 +23,9 @@ function Publications() {
 }
 //Добавить изменение стиля при переключении между разделами
 function Mentions() {
-	let publicationInfo = publicationsInfo.map((info) => {
+	let publicationInfo = publicationsInfo.map((info, id) => {
 		return (
-			<div className="publication-content">
+			<div className="publication-content" key={id}>
 				<div className="publication__year">{info.year}</div>
 				<PublicationsItems publicationProp={info.publics}/>
 			</div>
@@ -40,9 +40,9 @@ function Mentions() {
 }
 
 function PublicationsItems (props) {
-	let  publicationProp = props.publicationProp.map((info) => {
+	let  publicationProp = props.publicationProp.map((info, id) => {
 		return (
-			<div className="publication">
+			<div className="publication" key={id}>
 				<div className="publication__name publication__item">{info.name}</div>
 				<div className="publication__autors publication__item">{info.autors}</div>
 				<div className="publication__description publication__item">{info.description}</div>

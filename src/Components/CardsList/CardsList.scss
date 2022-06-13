@@ -57,11 +57,12 @@
 	justify-content: space-between;
 	align-items: center;
 	margin: 40px 0;
+}
+
+.directions-elem {
 	animation-name: showListElem;
 	animation-duration: 300ms;
 }
-
-
 @keyframes showListElem {
 	0% {
 		position: relative;
