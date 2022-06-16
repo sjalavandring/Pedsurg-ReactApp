@@ -4,12 +4,47 @@
 
 	}
 	/* Landscape tablets and medium desktops */
-	@media (min-width: 992px) and (max-width: 1199px) {
-		
+	@media (max-width: 1199px) {
+		.main-description {
+			text-align: center;
+			margin: 60px 30px;
+		}
+		.main-description__quote {
+
+			&:before {
+				left: 20px;
+			}
+
+			&:after {
+				right: 20px;
+			}
+		}
 	}
 	/* Portrait tablets and small desktops */
-	@media (min-width: 768px) and (max-width: 991px) { 
-		
+	@media (max-width: 991px) { 
+		.main-description {
+			text-align: center;
+			margin: 60px 30px 0px;
+			font-size: 25px;
+			line-height: 30px;
+		}
+
+		.main-description__quote {
+
+			&:before {
+				display: block;
+				position: static;
+				line-height: 0px;
+				text-align: left;
+			}
+
+			&:after {
+				display: block;
+				position: static;
+				text-align: right;
+				line-height: 20px;
+			}
+		}
 
 	}
 	/* Landscape phones and portrait tablets */

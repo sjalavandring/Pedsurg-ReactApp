@@ -1,4 +1,39 @@
+
+
 .main {
 	padding: 50px 10px;
 	background-color: #fff;
+}
+
+.main-description {
+	position: relative;
+	max-width: 1100px;
+	margin: 100px auto;
+	font-family: 'El Messiri', sans-serif;
+	font-size: 20px;
+}
+
+.main-description__quote {
+	max-width: 800px;
+	margin: 50px auto 0px;
+	text-align: center;
+	font-family: 'Caveat', cursive;
+	font-size: 30px;
+
+	&:before{
+		content: '“';
+		position: absolute;
+		left: 50px;
+		line-height: 80px;
+		font-size: 80px;
+		
+	}
+
+	&:after{
+		content: '”';
+		position: absolute;
+		right: 60px;
+		line-height: 80px;
+		font-size: 80px;
+	}
 }
