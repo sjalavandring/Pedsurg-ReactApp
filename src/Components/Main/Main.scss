@@ -1,4 +1,4 @@
-
+$basic-color: #0066FF;
 
 .main {
 	padding: 50px 10px;
@@ -26,6 +26,7 @@
 		left: 50px;
 		line-height: 80px;
 		font-size: 80px;
+		color: $basic-color;
 		
 	}
 
@@ -35,5 +36,6 @@
 		right: 60px;
 		line-height: 80px;
 		font-size: 80px;
+		color: $basic-color;
 	}
 }
