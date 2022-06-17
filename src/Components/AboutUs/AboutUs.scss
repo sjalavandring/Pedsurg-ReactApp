@@ -1,0 +1,21 @@
+.main-aboutus {
+	display: flex;
+	flex-direction: column;
+	background-color: #fff;
+}
+
+.aboutus-elem {
+	max-width: 80%;
+	margin: 50px auto;
+}
+
+.aboutus__image {
+	max-height: 450px;
+	margin: 25px auto;
+}
+
+.aboutus__descript {
+	text-align: center;
+	font-size: 25px;
+	line-height: 1.5em;
+}
