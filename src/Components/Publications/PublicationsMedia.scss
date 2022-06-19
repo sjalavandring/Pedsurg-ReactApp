@@ -8,6 +8,25 @@
 	}
 	/* Portrait tablets and small desktops */
 	@media (max-width: 991px) { 
+		.publications-chapters {
+			display: flex;
+			flex-direction: column;
+			padding: 30px 0;
+		}
+
+		.publications-search {
+			position: static;
+			margin: 40px 0 0;
+			right: 15px;
+			align-self: center;
+			height: 50px;
+			max-width: 320px;
+			border: 2px solid #000;
+			border-radius: 5px;
+			padding: 0 10px;
+			font-size: 25px;
+		}
+
 		.book-zoom__item {
 			// margin: 10px;
 		}
@@ -19,6 +38,11 @@
 			max-width: 95vw;
 			min-height: 650px;
 		}
+
+		.publications-nav__item{
+			margin:0 30px;
+		}
+
 	}
 	/* Landscape phones and portrait tablets */
 	@media (max-width: 767px) { 

@@ -1,28 +1,34 @@
 import publicationsInfo from '../../database/PublicationsDB.js';
 import publicBooks from '../../database/PublicationBooksDB.js';
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import {Header, Main, Footer, Directions} from '../../index.js';
 import {BrowserRouter, NavLink, Outlet} from "react-router-dom";
 
 function Publications() {
 
-	const setActive = ({isActive}) =>  "publications-chapters__item " + (isActive ? "publications-chapters__item--active" : "");
+	const setActive = ({isActive}) =>  "publications-nav__item " + (isActive ? "publications-nav__item--active" : "");
+	
+	let [searchTarget, setSearchTarget] = useState();
+	let seacrhContext = useContext(searchTarget)
 
 	return (
 		<main className="main-publications container ">
-				<div className="main-publications-chapters">
-					<NavLink className={setActive} to="mentions">Публикации</NavLink>
-					<NavLink className={setActive} to="books">Книги</NavLink>
+				<div className="publications-chapters">
+					<div className="publications-nav">
+						<NavLink className={setActive} to="mentions">Публикации</NavLink>
+						<NavLink className={setActive} to="books">Книги</NavLink>
+					</div>
+					<input  className="publications-search" type="text" placeholder="Поиск" onChange={e => setSearchTarget(e.target.value)}/>
 				</div>	
 				<div className="main-publications-content ">
-					<Outlet/>
+					<Outlet searchTarget={searchTarget}/>
 				</div>	
-		
 		</main>
-	)
-}
-//Добавить изменение стиля при переключении между разделами
+	) //При каждом изменении элемента input будет меняться состояние компонента
+}	 //Состояние содержащее цель поиска (searchTarget) передается в виде пропсов в Mentions, а потом в PublicationsItems
+
 function Mentions() {
+	console.log(props.searchTarget)
 	let publicationInfo = publicationsInfo.map((info, id) => {
 		return (
 			<div className="publication-content" key={id}>
@@ -40,9 +46,11 @@ function Mentions() {
 }
 
 function PublicationsItems (props) {
-	let  publicationProp = props.publicationProp.map((info, id) => {
+		let spublicationProp = props.publicationProp.map((info, id) => {
+		let publicationText = info.name + info.autors + info.description;
+
 		return (
-			<div className="publication" key={id}>
+			<div className={"publication " + (publicationText.indexOf(props.searchTarget) != -1 ? "" : "inactive")} key={id}>
 				<div className="publication__name publication__item">{info.name}</div>
 				<div className="publication__autors publication__item">{info.autors}</div>
 				<div className="publication__description publication__item">{info.description}</div>
@@ -67,7 +75,7 @@ function Books() {
 	})
 
 	return (
-		<div className="publications-books-content">
+		<div className="publications-books">
 			{bookInfo}
 			<div className={"book-zoom-background " + (isZoomed == 1 ? "shadowBack" : "")} onClick={() => setZoom(!isZoomed)}></div>
 			<ZoomBook activeBook={activeBook} isZoomed={isZoomed}/>
