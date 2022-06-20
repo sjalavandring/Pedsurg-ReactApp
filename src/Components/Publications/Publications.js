@@ -1,39 +1,38 @@
 import publicationsInfo from '../../database/PublicationsDB.js';
 import publicBooks from '../../database/PublicationBooksDB.js';
-import React, { useState, useContext } from 'react';
+import React, { useState} from 'react';
 import {Header, Main, Footer, Directions} from '../../index.js';
-import {BrowserRouter, NavLink, Outlet} from "react-router-dom";
+import {BrowserRouter, NavLink, Outlet, useOutletContext} from "react-router-dom";
 
 function Publications() {
 
 	const setActive = ({isActive}) =>  "publications-nav__item " + (isActive ? "publications-nav__item--active" : "");
 	
-	let [searchTarget, setSearchTarget] = useState();
-	let seacrhContext = useContext(searchTarget)
+	let [searchTarget, setSearchTarget] = useState("");
 
 	return (
 		<main className="main-publications container ">
 				<div className="publications-chapters">
 					<div className="publications-nav">
-						<NavLink className={setActive} to="mentions">Публикации</NavLink>
+						<NavLink className={setActive} to="mentions" component={() => <Mentions searchTarget={searchTarget}/>}>Публикации</NavLink>
 						<NavLink className={setActive} to="books">Книги</NavLink>
 					</div>
 					<input  className="publications-search" type="text" placeholder="Поиск" onChange={e => setSearchTarget(e.target.value)}/>
 				</div>	
-				<div className="main-publications-content ">
-					<Outlet searchTarget={searchTarget}/>
+				<div className="main-publications-content ">	
+					<Outlet context={searchTarget}/>
 				</div>	
 		</main>
 	) //При каждом изменении элемента input будет меняться состояние компонента
 }	 //Состояние содержащее цель поиска (searchTarget) передается в виде пропсов в Mentions, а потом в PublicationsItems
 
-function Mentions() {
-	console.log(props.searchTarget)
+function Mentions(props) {
+	let searchTarget = useOutletContext();
 	let publicationInfo = publicationsInfo.map((info, id) => {
 		return (
 			<div className="publication-content" key={id}>
 				<div className="publication__year">{info.year}</div>
-				<PublicationsItems publicationProp={info.publics}/>
+				<PublicationsItems publicationProp={info.publics} searchTarget={searchTarget}/>
 			</div>
 		)
 	})
@@ -46,17 +45,17 @@ function Mentions() {
 }
 
 function PublicationsItems (props) {
-		let spublicationProp = props.publicationProp.map((info, id) => {
-		let publicationText = info.name + info.autors + info.description;
+		let publicationProp = props.publicationProp.map((info, id) => {
+			let publicationText = info.name + info.autors + info.description;
 
-		return (
-			<div className={"publication " + (publicationText.indexOf(props.searchTarget) != -1 ? "" : "inactive")} key={id}>
-				<div className="publication__name publication__item">{info.name}</div>
-				<div className="publication__autors publication__item">{info.autors}</div>
-				<div className="publication__description publication__item">{info.description}</div>
-			</div>	
-		)
-	})
+			return (
+				<div className={"publication " + (publicationText.toLowerCase().indexOf(props.searchTarget.toLowerCase()) != -1 ? "" : "inactive")}  key={id}>
+					<div className="publication__name publication__item">{info.name}</div>
+					<div className="publication__autors publication__item">{info.autors}</div>
+					<div className="publication__description publication__item">{info.description}</div>
+				</div>	
+			)
+		})
 	return (
 		<>
 			{publicationProp}
@@ -100,3 +99,8 @@ function BookInformation (props) {
 }
 
 export {Publications, Mentions, Books};
+
+
+
+
+
