@@ -41,6 +41,13 @@ $basic-color: #0066FF;
 	border-radius: 5px;
 	padding: 0 10px;
 	font-size: 20px;
+	transition: 0.3s ease;
+	&:focus {
+		transform: scale(1.05);
+		transition: 0.3s;
+		outline: none;
+		border: 2px solid $basic-color;
+	}
 }
 
 .main-publications-content{
@@ -110,7 +117,6 @@ $basic-color: #0066FF;
 .book {
 	display: flex;
 	justify-content: center;
-	// flex-grow: 1;
 	margin: 20px ;
 	cursor: pointer;
 	transition: 0.2s ease;

@@ -1,6 +1,6 @@
 import './App.scss';
 import {useContext} from 'react'
-import {Header, HeaderMobile, Main, Footer, Directions, Teachers, AboutUs} from './index.js'
+import {Header, HeaderMobile, Main, Footer, Directions, Teachers, Archive, AboutUs} from './index.js'
 import {BrowserRouter,Routes, Route} from "react-router-dom";
 import {Publications, Mentions, Books} from './Components/Publications/Publications.js';
 import MediaQuery from 'react-responsive';
@@ -16,13 +16,14 @@ function App() {
       </MediaQuery>
       <Routes>
         <Route path='/' element={<Main />} />
-        <Route path='/directions' element={<Directions />} />
-        <Route path='/teachers' element={<Teachers />} />
-        <Route path='/publications/*' element={< Publications />}>
+        <Route path='directions' element={<Directions />} />
+        <Route path='teachers' element={<Teachers />} />
+        <Route path='publications/*' element={< Publications />}>
           <Route index path='*' element={< Mentions />} />
           <Route path='mentions' element={< Mentions />} />
           <Route path='books' element={< Books />} />
         </Route>
+        <Route path='archive' element={<Archive />} />
         <Route path='about' element={<AboutUs />} />
       </Routes>
       <Footer />

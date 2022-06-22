@@ -1,0 +1,11 @@
+.main-archive {
+	display: flex;
+	height: calc(100vh - 158px - 45px) ;  //Убрать при добавлении контента на страницу
+	background-color: #fff;
+}
+
+.archive-message {
+	align-self: center;
+	margin: 0 auto;
+	font-size: 30px;
+}	

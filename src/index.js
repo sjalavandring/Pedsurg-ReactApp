@@ -4,7 +4,6 @@ import App from './App';
 import './App.scss';
 import {CardsListImage, CardsListDescript, CardsListDropdown} from './Components/CardsList/CardsListInner.js'
 import {Publications, Mentions, Books} from './Components/Publications/Publications.js';
-export {Publications, Mentions, Books}
 export {default as Header} from './Components/Header/Header.js';
 export {default as HeaderMobile} from './Components/Header/HeaderMobile.js';
 export {default as Main} from './Components/Main/Main.js'
@@ -15,6 +14,7 @@ export {default as useInnerWidth} from './Components/CardsList/useInnerWidth.js'
 export {CardsListImage, CardsListDescript, CardsListTitle, CardsListDropdown} from './Components/CardsList/CardsListInner.js'
 export {default as Teachers} from './Components/Teachers/Teachers.js'
 export {default as DirectionsContext} from './Components/Directions/directionsContext.js'
+export {default as Archive} from "./Components/Archive/Archive.js"
 export {default as AboutUs} from "./Components/AboutUs/AboutUs.js"
 // import {Publications, Test1, Test2} from './Components/Publications/Publications.js'
 
