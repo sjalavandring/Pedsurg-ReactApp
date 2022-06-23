@@ -48,7 +48,6 @@ $basic-color: #0066FF;
 
 html {
   margin-right: calc(-1 * (100vw - 100%));
-  overflow-x: hidden;
   @media (max-width: 1199px) {
     margin-right: 0px;
     overflow-x: hidden;

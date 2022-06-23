@@ -7,6 +7,7 @@ $basic-color: #0066FF;
 
 .main-publications{
 	background-color: #fff;
+	min-height: calc(100vh - 158px - 45px) ;
 	// background: url(../../img/publications/books-background.jpg);
 }
 
@@ -48,6 +49,13 @@ $basic-color: #0066FF;
 		outline: none;
 		border: 2px solid $basic-color;
 	}
+}
+
+
+.publications-nothing-found {
+	text-align: center;
+	font-size: 30px;
+	margin: 50px auto;
 }
 
 .main-publications-content{

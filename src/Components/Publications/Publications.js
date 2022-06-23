@@ -1,6 +1,6 @@
 import publicationsInfo from '../../database/PublicationsDB.js';
 import publicBooks from '../../database/PublicationBooksDB.js';
-import React, { useState} from 'react';
+import React, {useState} from 'react';
 import {Header, Main, Footer, Directions} from '../../index.js';
 import {BrowserRouter, NavLink, Outlet, useOutletContext} from "react-router-dom";
 
@@ -19,23 +19,28 @@ function Publications() {
 					</div>
 					<input  className="publications-search" type="text" placeholder="Поиск" onChange={e => setSearchTarget(e.target.value)}/>
 				</div>	
-				<div className="main-publications-content ">	
+				<div className="main-publications-content ">	 
 					<Outlet context={searchTarget}/>
 				</div>	
 		</main>
-	) //При каждом изменении элемента input будет меняться состояние компонента
-}	 //Состояние содержащее цель поиска (searchTarget) передается в виде пропсов в Mentions, а потом в PublicationsItems
+	) 	//При каждом изменении элемента input будет меняться состояние компонента
+}	 	//Состояние содержащее цель поиска (searchTarget) передается в виде пропсов в Mentions, а потом в PublicationsItems
 
 function Mentions(props) {
+	let [visibleYearsCount, setVisibleYearsCount] = useState(0);
+
 	let searchTarget = useOutletContext();
+
 	let publicationInfo = publicationsInfo.map((info, id) => {
 		return (
-			<div className="publication-content" key={id}>
+			<div className={"publication-content " + (visibleYearsCount == 0 ? "" : "inactive")} key={id}>
 				<div className="publication__year">{info.year}</div>
-				<PublicationsItems publicationProp={info.publics} searchTarget={searchTarget}/>
+				<PublicationsItems publicationProp={info.publics} searchTarget={searchTarget} visibleYearsCount={[visibleYearsCount, setVisibleYearsCount]}/>
 			</div>
 		)
 	})
+
+
 
 	return (
 		<div className="publications-mantions-content">
@@ -45,17 +50,27 @@ function Mentions(props) {
 }
 
 function PublicationsItems (props) {
-		let publicationProp = props.publicationProp.map((info, id) => {
-			let publicationText = info.name + info.autors + info.description;
+	let [visibleYearsCount, setVisibleYearsCount] = props.visibleYearsCount;
 
-			return (
-				<div className={"publication " + (publicationText.toLowerCase().indexOf(props.searchTarget.toLowerCase()) != -1 ? "" : "inactive")}  key={id}>
-					<div className="publication__name publication__item">{info.name}</div>
-					<div className="publication__autors publication__item">{info.autors}</div>
-					<div className="publication__description publication__item">{info.description}</div>
-				</div>	
-			)
-		})
+	let publicationProp = props.publicationProp.map((info, id) => {
+	
+		let publicationText = info.name + info.autors + info.description;
+
+		return (
+			<div className={"publication " + (publicationText.toLowerCase().indexOf(props.searchTarget.toLowerCase()) != -1 ? "" : "inactive")}  key={id}>
+				<div className="publication__name publication__item">{info.name}</div>
+				<div className="publication__autors publication__item">{info.autors}</div>
+				<div className="publication__description publication__item">{info.description}</div>
+			</div>	
+		)
+	})
+	
+	publicationProp.forEach((item, id) => {
+		if (item.props.className.indexOf("inactive") == -1) {
+
+		}
+	})
+	setVisibleYearsCount(2)
 	return (
 		<>
 			{publicationProp}
@@ -104,3 +119,4 @@ export {Publications, Mentions, Books};
 
 
 
+//visibleYearsCount != 0 ? <div className="publications-nothing-found">Ничего не найдено</div> : 
