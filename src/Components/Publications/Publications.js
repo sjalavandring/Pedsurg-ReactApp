@@ -27,19 +27,18 @@ function Publications() {
 }	 	//Состояние содержащее цель поиска (searchTarget) передается в виде пропсов в Mentions, а потом в PublicationsItems
 
 function Mentions(props) {
-	let [visibleYearsCount, setVisibleYearsCount] = useState(0);
+	let [visibleYears, setVisibleYears] = useState(1);
 
 	let searchTarget = useOutletContext();
 
 	let publicationInfo = publicationsInfo.map((info, id) => {
 		return (
-			<div className={"publication-content " + (visibleYearsCount == 0 ? "" : "inactive")} key={id}>
+			<div className="publication-content" key={id}>
 				<div className="publication__year">{info.year}</div>
-				<PublicationsItems publicationProp={info.publics} searchTarget={searchTarget} visibleYearsCount={[visibleYearsCount, setVisibleYearsCount]}/>
+				<PublicationsItems publicationProp={info.publics} searchTarget={searchTarget} visibleYears={[visibleYears, setVisibleYears]}/>
 			</div>
 		)
 	})
-
 
 
 	return (
@@ -50,10 +49,10 @@ function Mentions(props) {
 }
 
 function PublicationsItems (props) {
-	let [visibleYearsCount, setVisibleYearsCount] = props.visibleYearsCount;
-
+	let [visibleYears, setVisibleYears] = props.visibleYears;
+	// console.log(visibleYears)
 	let publicationProp = props.publicationProp.map((info, id) => {
-	
+		
 		let publicationText = info.name + info.autors + info.description;
 
 		return (
@@ -64,13 +63,17 @@ function PublicationsItems (props) {
 			</div>	
 		)
 	})
+
+	let test = visibleYears;
 	
 	publicationProp.forEach((item, id) => {
 		if (item.props.className.indexOf("inactive") == -1) {
-
+			test+=1;
 		}
 	})
-	setVisibleYearsCount(2)
+	test == 0 ? setVisibleYears(0) : setVisibleYears(1);
+	
+	
 	return (
 		<>
 			{publicationProp}
