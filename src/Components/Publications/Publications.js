@@ -1,6 +1,6 @@
 import publicationsInfo from '../../database/PublicationsDB.js';
 import publicBooks from '../../database/PublicationBooksDB.js';
-import React, {useState} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import {Header, Main, Footer, Directions} from '../../index.js';
 import {BrowserRouter, NavLink, Outlet, useOutletContext} from "react-router-dom";
 
@@ -27,19 +27,18 @@ function Publications() {
 }	 	//Состояние содержащее цель поиска (searchTarget) передается в виде пропсов в Mentions, а потом в PublicationsItems
 
 function Mentions(props) {
-	let [visibleYears, setVisibleYears] = useState(1);
-
+	
 	let searchTarget = useOutletContext();
 
+	let testRef = useRef(1)
 	let publicationInfo = publicationsInfo.map((info, id) => {
 		return (
-			<div className="publication-content" key={id}>
+			<div className="publication-content" key={id} ref={testRef}>
 				<div className="publication__year">{info.year}</div>
-				<PublicationsItems publicationProp={info.publics} searchTarget={searchTarget} visibleYears={[visibleYears, setVisibleYears]}/>
+				<PublicationsItems publicationProp={info.publics} searchTarget={searchTarget} testRef={testRef}/>
 			</div>
 		)
 	})
-
 
 	return (
 		<div className="publications-mantions-content">
@@ -49,14 +48,15 @@ function Mentions(props) {
 }
 
 function PublicationsItems (props) {
-	let [visibleYears, setVisibleYears] = props.visibleYears;
-	// console.log(visibleYears)
-	let publicationProp = props.publicationProp.map((info, id) => {
-		
+	// console.log("Test is " + test)
+	let childrenCount = props.publicationProp.length;
+	// console.log(childrenCount)
+
+	let publication = props.publicationProp.map((info, id) => {
 		let publicationText = info.name + info.autors + info.description;
 
 		return (
-			<div className={"publication " + (publicationText.toLowerCase().indexOf(props.searchTarget.toLowerCase()) != -1 ? "" : "inactive")}  key={id}>
+			<div className={"publication " + (publicationText.toLowerCase().includes(props.searchTarget.toLowerCase()) ? "" : "inactive")}  key={id}>
 				<div className="publication__name publication__item">{info.name}</div>
 				<div className="publication__autors publication__item">{info.autors}</div>
 				<div className="publication__description publication__item">{info.description}</div>
@@ -64,19 +64,14 @@ function PublicationsItems (props) {
 		)
 	})
 
-	let test = visibleYears;
-	
-	publicationProp.forEach((item, id) => {
-		if (item.props.className.indexOf("inactive") == -1) {
-			test+=1;
-		}
+	publication.forEach((item, id) => {
+		if (item.props.className.includes("inactive")) {childrenCount-=1}
 	})
-	test == 0 ? setVisibleYears(0) : setVisibleYears(1);
-	
-	
+	// if (childrenCount == 0) {console.log(publication[0].parentNode)}
+	console.log(publication[0].parentElement)
 	return (
 		<>
-			{publicationProp}
+			{publication}
 		</>	
 	)
 }
@@ -117,9 +112,3 @@ function BookInformation (props) {
 }
 
 export {Publications, Mentions, Books};
-
-
-
-
-
-//visibleYearsCount != 0 ? <div className="publications-nothing-found">Ничего не найдено</div> : 
