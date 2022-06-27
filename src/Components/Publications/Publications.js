@@ -9,7 +9,7 @@ function Publications() {
 	const setActive = ({isActive}) =>  "publications-nav__item " + (isActive ? "publications-nav__item--active" : "");
 	
 	let [searchTarget, setSearchTarget] = useState("");
-
+	let [publicationsVisibility, setPublicationsVisibility] = useState(1);
 	return (
 		<main className="main-publications container ">
 				<div className="publications-chapters">
@@ -30,29 +30,41 @@ function Mentions(props) {
 	
 	let searchTarget = useOutletContext();
 
-	let testRef = useRef(1)
 	let publicationInfo = publicationsInfo.map((info, id) => {
 		return (
-			<div className="publication-content" key={id} ref={testRef}>
-				<div className="publication__year">{info.year}</div>
-				<PublicationsItems publicationProp={info.publics} searchTarget={searchTarget} testRef={testRef}/>
+			<div className="publication-content" key={id} >
+				<PublicationsItems publicationProp={info} searchTarget={searchTarget}/>
 			</div>
 		)
 	})
 
-	return (
-		<div className="publications-mantions-content">
-		  {publicationInfo}
-		</div>
-	)
+	let visibleElementsCount = 0;
+	publicationInfo.forEach((item, id) => {
+		if (!item.props.className.includes("inactive")) {
+			visibleElementsCount+=1;
+		}
+	})
+
+	if (visibleElementsCount > 0) {
+		return (
+			<div className="publications-mantions-content">
+			  {publicationInfo}
+			</div>
+		)
+	} else {
+		return (
+			<div className="publications-mantions-content">
+			  <div className="publications-nothing-found">Ничего не найдено</div>
+			</div>
+		)
+	}
+
 }
 
 function PublicationsItems (props) {
-	// console.log("Test is " + test)
 	let childrenCount = props.publicationProp.length;
-	// console.log(childrenCount)
 
-	let publication = props.publicationProp.map((info, id) => {
+	let publication = props.publicationProp.publics.map((info, id) => {
 		let publicationText = info.name + info.autors + info.description;
 
 		return (
@@ -67,10 +79,19 @@ function PublicationsItems (props) {
 	publication.forEach((item, id) => {
 		if (item.props.className.includes("inactive")) {childrenCount-=1}
 	})
-	// if (childrenCount == 0) {console.log(publication[0].parentNode)}
-	console.log(publication[0].parentElement)
+
+	let visibleElementsCount = 0;
+	publication.forEach((item, id) => {
+		if (!item.props.className.includes("inactive")) {
+			visibleElementsCount+=1;
+		}
+	})
+
+
+
 	return (
-		<>
+		<>	
+			<div className={"publication__year " + (visibleElementsCount > 0 ? "" : "inactive")}>{props.publicationProp.year}</div>
 			{publication}
 		</>	
 	)
