@@ -42,6 +42,7 @@ function HeaderMobile () {
 			</div>
 			<div className={"header-background " + (isMenuActive === true ? "shadowBack" : "")} onClick={() => closeMobileMenu()}></div>
 		</header>
+		
 	)
 }
 

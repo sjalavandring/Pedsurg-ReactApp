@@ -17,7 +17,9 @@ function Publications() {
 						<NavLink className={setActive} to="mentions" component={() => <Mentions searchTarget={searchTarget}/>}>Публикации</NavLink>
 						<NavLink className={setActive} to="books">Книги</NavLink>
 					</div>
-					<input  className="publications-search" type="text" placeholder="Поиск" onChange={e => setSearchTarget(e.target.value)}/>
+					<div className="publications-search">
+						<input  className="search-field" type="text" placeholder="Поиск" onChange={e => setSearchTarget(e.target.value)}/>
+					</div>
 				</div>	
 				<div className="main-publications-content ">	 
 					<Outlet context={searchTarget}/>
@@ -27,13 +29,14 @@ function Publications() {
 }	 	//Состояние содержащее цель поиска (searchTarget) передается в виде пропсов в Mentions, а потом в PublicationsItems
 
 function Mentions(props) {
-	
 	let searchTarget = useOutletContext();
+
+	// let [publicationsVisibility, setPublicationsVisibility] = useState(0);
 
 	let publicationInfo = publicationsInfo.map((info, id) => {
 		return (
 			<div className="publication-content" key={id} >
-				<PublicationsItems publicationProp={info} searchTarget={searchTarget}/>
+				<PublicationsItems publicationProp={info} searchTarget={searchTarget} />
 			</div>
 		)
 	})
@@ -45,28 +48,25 @@ function Mentions(props) {
 		}
 	})
 
-	if (visibleElementsCount > 0) {
+
+
+    {
 		return (
 			<div className="publications-mantions-content">
-			  {publicationInfo}
+			 {visibleElementsCount > 0 ?  publicationInfo : <div className="publications-nothing-found">Ничего не найдено</div>}
 			</div>
 		)
-	} else {
-		return (
-			<div className="publications-mantions-content">
-			  <div className="publications-nothing-found">Ничего не найдено</div>
-			</div>
-		)
-	}
+	} 
 
 }
 
 function PublicationsItems (props) {
 	let childrenCount = props.publicationProp.length;
+	let changeA = props.changeA;
+
 
 	let publication = props.publicationProp.publics.map((info, id) => {
 		let publicationText = info.name + info.autors + info.description;
-
 		return (
 			<div className={"publication " + (publicationText.toLowerCase().includes(props.searchTarget.toLowerCase()) ? "" : "inactive")}  key={id}>
 				<div className="publication__name publication__item">{info.name}</div>
@@ -86,7 +86,6 @@ function PublicationsItems (props) {
 			visibleElementsCount+=1;
 		}
 	})
-
 
 
 	return (
