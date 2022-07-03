@@ -31,44 +31,45 @@ function Publications() {
 function Mentions(props) {
 	let searchTarget = useOutletContext();
 
-	// let [publicationsVisibility, setPublicationsVisibility] = useState(0);
+	let [publicationsVisibility, setPublicationsVisibility] = useState(1);
+	function changeA (a) {
+		setPublicationsVisibility(a);
+	}
+
+	useEffect(() => {
+		setPublicationsVisibility(0);
+	}, [searchTarget])
 
 	let publicationInfo = publicationsInfo.map((info, id) => {
 		return (
-			<div className="publication-content" key={id} >
-				<PublicationsItems publicationProp={info} searchTarget={searchTarget} />
+			<div className={"publication-content" + (publicationsVisibility > 0 ? "" : "inactive")}  key={id} >
+				<PublicationsItems publicationProp={info} searchTarget={searchTarget} changeA={changeA} />
 			</div>
 		)
 	})
 
-	let visibleElementsCount = 0;
-	publicationInfo.forEach((item, id) => {
-		if (!item.props.className.includes("inactive")) {
-			visibleElementsCount+=1;
-		}
-	})
 
-
-
-    {
-		return (
-			<div className="publications-mantions-content">
-			 {visibleElementsCount > 0 ?  publicationInfo : <div className="publications-nothing-found">Ничего не найдено</div>}
-			</div>
-		)
-	} 
+	return (
+		<div className="publications-mantions-content">
+			{publicationInfo}
+			{publicationsVisibility > 0 ? "" : <div className="publications-nothing-found">Ничего не найдено</div>}
+		</div>
+	)
 
 }
 
 function PublicationsItems (props) {
+	function handleFunction (a) {
+		props.changeA(a);
+	}
+
 	let childrenCount = props.publicationProp.length;
-	let changeA = props.changeA;
 
 
 	let publication = props.publicationProp.publics.map((info, id) => {
 		let publicationText = info.name + info.autors + info.description;
 		return (
-			<div className={"publication " + (publicationText.toLowerCase().includes(props.searchTarget.toLowerCase()) ? "" : "inactive")}  key={id}>
+			<div className={"publication " + (publicationText.toLowerCase().includes(props.searchTarget.toLowerCase()) ? "" : "inactive")} key={id}>
 				<div className="publication__name publication__item">{info.name}</div>
 				<div className="publication__autors publication__item">{info.autors}</div>
 				<div className="publication__description publication__item">{info.description}</div>
@@ -85,7 +86,15 @@ function PublicationsItems (props) {
 		if (!item.props.className.includes("inactive")) {
 			visibleElementsCount+=1;
 		}
+
 	})
+
+	if (visibleElementsCount > 0) {
+		// console.log(visibleElementsCount)
+		setTimeout(() => {
+			handleFunction(1);
+		});
+	}
 
 
 	return (
