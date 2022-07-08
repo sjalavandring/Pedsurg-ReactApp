@@ -1,7 +1,7 @@
 import logo1 from "../../img/logo1.png"
 import logo2 from "../../img/logo2.jpg"
 import logo3 from "../../img/logo3.jpg"
-import {BrowserRouter, Routes, Route, Link} from "react-router-dom";
+import {BrowserRouter, Routes, Route, Link, NavLink} from "react-router-dom";
 import {Footer} from '../../index.js'
 import navItems from '../../database/MainMenuDB.js';
 
@@ -45,8 +45,11 @@ function HeaderTop(props) {
 }
 
 function HeaderNav(props) {
+
+	const setMenuActive = ({isActive}) => "nav-menu__item" + (isActive ? " nav-menu__item--active" : "")
+
 	let navList = props.navItems.map((item) => {
-		return <li key={item.id} ><Link className="nav-menu__item" to={item.link}>{item.text}</Link></li>
+		return <li key={item.id} ><NavLink className={setMenuActive} to={item.link}>{item.text}</NavLink></li>
 	}) //Создание списка для элементов навигации
 	return (
 		<nav className="nav">

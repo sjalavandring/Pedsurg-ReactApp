@@ -47,7 +47,18 @@ $basic-color: #0066FF;
 .nav-menu__item {
 	color: #fff;
 	transition: 0.3s ease;
-	&:hover {
-		// border-bottom: 1px solid white;
+}
+
+.nav-menu__item--active {
+	justify-content: center;
+	&:after {
+		content: "";
+		display: block;
+		width: inherit;
+		background-color:#fff;
+		height: 2px;
+		margin: auto;
+		border-radius: 5px;
+		animation: chapter-active 0.4s ease;
 	}
 }
