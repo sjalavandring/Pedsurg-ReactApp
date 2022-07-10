@@ -1,4 +1,4 @@
-import {CardsList, CardsListImage, CardsListDescript, CardsListTitle, CardsListDropdown, DirectionsContext} from '../../index.js';
+import {CardsList, CardsListImage, CardsListDescript, CardsListTitle, CardsListDropdown, CardsListSlider, DirectionsContext} from '../../index.js';
 import directionsDB from '../../database/DirectionsDB.js'; 
 import {useState, useEffect} from 'react'
 import directionsArrow from '../../img/DirectionsCardsList/directionsArrow.png'
@@ -12,11 +12,11 @@ function Directions() {
 		return (
 			<>
 				<div className="cards-list-dropdown" onClick={() => {changeCardsListVisibility(!cardsListVisibility);}}>
-					<img className={"dropdown__img " + (cardsListVisibility == true ? "dropdown__img--active" : "dropdown__img--inactive")} src={directionsArrow}/> 
+					<img className={"cards-list-dropdown__img " + (cardsListVisibility == true ? "cards-list-dropdown__img--active" : "dropdown__img--inactive")} src={directionsArrow}/> 
 					<CardsListDropdown cardsListProps={props.directionsListProps}/>
 				</div>
 				<div className={"cards-list-elem directions-elem " + (cardsListVisibility == true ? "cards-list-elem--active" : "inactive")}>
-					<CardsListImage cardsListProps={props.directionsListProps}/>
+					<CardsListSlider cardsListProps={props.directionsListProps}/>
 					<div className="cards-list-descript cards-list-inner">
 						<CardsListTitle cardsListProps={props.directionsListProps}/>
 						<CardsListDescript cardsListProps={props.directionsListProps}/>

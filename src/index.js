@@ -11,7 +11,7 @@ export {default as Footer} from './Components/Footer/Footer.js'
 export {default as Directions} from './Components/Directions/Directions.js'
 export {default as CardsList} from './Components/CardsList/CardsList.js'
 export {default as useInnerWidth} from './Components/CardsList/useInnerWidth.js'
-export {CardsListImage, CardsListDescript, CardsListTitle, CardsListDropdown} from './Components/CardsList/CardsListInner.js'
+export {CardsListImage, CardsListDescript, CardsListTitle, CardsListDropdown, CardsListSlider} from './Components/CardsList/CardsListInner.js'
 export {default as Teachers} from './Components/Teachers/Teachers.js'
 export {default as DirectionsContext} from './Components/Directions/directionsContext.js'
 export {default as Archive} from "./Components/Archive/Archive.js"
