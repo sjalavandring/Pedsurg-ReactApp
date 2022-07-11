@@ -9,12 +9,12 @@ import slide6 from "../../img/main-slider/slide6.jpg";
 
 function Main() {
 	let sliderData = [
-		{id: 1, src: slide1, href: "https://www.google.ru/"},
-		{id: 2, src: slide2, href: "https://www.google.ru/"},
-		{id: 3, src: slide3, href: "https://www.google.ru/"},
-		{id: 4, src: slide4, href: "https://www.google.ru/"},
-		{id: 5, src: slide5, href: "https://www.google.ru/"},
-		{id: 6, src: slide6, href: "https://www.google.ru/"},
+		{id: 1, src: slide1},
+		{id: 2, src: slide2},
+		{id: 3, src: slide3},
+		{id: 4, src: slide4},
+		{id: 5, src: slide5},
+		{id: 6, src: slide6},
 	]
 
 	return (

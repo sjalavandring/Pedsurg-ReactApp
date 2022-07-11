@@ -125,7 +125,6 @@ function Books() {
 }
 
 function ZoomBook(props) {
-	// console.log(props)
 	return (
 		<BookInformation activeBook={props.activeBook} isZoomed={props.isZoomed}/>
 	)

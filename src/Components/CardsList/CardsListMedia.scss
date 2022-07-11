@@ -46,6 +46,10 @@
 	.cards-list-image {
 		margin:20px;
 	}
+	.cards-list-slider__img {
+		transform: scale(1);
+		max-width: 450px;
+	}
 }
 /* Portrait phones and smaller */
 @media (max-width: 480px) {
