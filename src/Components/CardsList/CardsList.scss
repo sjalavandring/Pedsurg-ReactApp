@@ -17,7 +17,7 @@
 .cards-list-descript {
 	max-width: 700px;
 	margin: 0 40px;
-	font-family: Lato, sans-serif;
+	font-family: 'Rubik', sans-serif;
 	font-size: 20px;
 }
 
@@ -61,18 +61,20 @@
 
 .directions-elem {
 	animation-name: showListElem;
+	animation-timing-function: easy-out;
 	animation-duration: 300ms;
-}
-@keyframes showListElem {
-	0% {
-		position: relative;
-		top: -50px;
+	@keyframes showListElem {
+		0% {
+			position: relative;
+			top: -100px;
+		}
+		100% {
+			position: relative;
+			top: 0px;
+		}
 	}
-	100% {
-		position: relative;
-		top: 0px;
-	}
 }
+
 
 .cards-list-slider {
 	display: flex;
@@ -87,11 +89,48 @@
 
 .cards-list-slider-image {
 	@extend .cards-list-image;
-	margin: 0 15px;
+	margin: 0 10px;
 	transition: 0.2s ease;
+	cursor: pointer;
+	transition: 0.4s;
 	&:hover {
-		transition: 0.3s;
-		transform: scale(1.03);
+		// transition: 0.7s;
+		// transform: scale(1.03);
+	}
+}
+
+.slider-image--next {
+	animation-name: nextSlide;
+	animation-duration: 300ms;
+	animation-timing-function: easy-out;
+	animation-duration: infinite;
+	@keyframes nextSlide {
+		0% {
+			opacity: 0.6;
+			transform: translate(15%, 0px)
+		}
+		100% {
+			opacity: 1;
+			transform: translate(0px, 0px)
+			// cursor: default;
+		}
+	}
+}
+.slider-image--prev {
+	animation-name: prevSlide;
+	animation-duration: 300ms;
+	animation-timing-function: easy-out;
+	animation-direction: reverse;
+	@keyframes prevSlide {
+		0% {
+			opacity: 0;
+			transform: translate(-15%, 0px)
+		}
+
+		100% {
+			opacity: 1;
+			transform: translate(0px, 0px)
+		}
 	}
 }
 
@@ -99,15 +138,15 @@
 	display: flex;
 	align-self: center;
 	justify-content: center;
-	width: 50px;
-	height: 50px;
+	width: 30px;
+	height: 30px;
 	border: 3px solid transparent;
 	border-radius: 100px;
 	user-select: none;
 	transition: 0.3s ease;
 	&:hover {
 		transition: .4s;
-		transform: scale(1.1);
+		transform: scale(1.2);
 	}
 }
 

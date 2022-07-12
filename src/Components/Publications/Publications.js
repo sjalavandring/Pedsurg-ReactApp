@@ -90,10 +90,9 @@ function PublicationsItems (props) {
 	})
 
 	if (visibleElementsCount > 0) {
-		// console.log(visibleElementsCount)
-		setTimeout(() => {
-			handleFunction(1);
-		});
+		// setTimeout(() => {
+			setTimeout(handleFunction(1));
+		// });
 	}
 
 

@@ -4,6 +4,7 @@ import logo3 from "../../img/logo3.jpg"
 import {BrowserRouter, Routes, Route, Link, NavLink} from "react-router-dom";
 import {Footer} from '../../index.js'
 import navItems from '../../database/MainMenuDB.js';
+import {useState} from "react"
 
 
 
@@ -36,7 +37,17 @@ function HeaderTop(props) {
 			<div className="header-title">
 				<h1>Детская торако-абдоминальная хирургия</h1>
 			</div>	
-			<div className="header-contacts">
+			<HeaderContacts/>
+		</div>
+	)
+}
+
+function HeaderContacts() {
+	let [isContactsActive, setContactsActive] = useState(false);
+	return (
+		<div className="header-contacts">
+			<button className="header-contacts__button" onClick={() => {setContactsActive(!isContactsActive)}}>{isContactsActive == false ? "Показать контакты" : "Скрыть контакты"}</button>
+			<div className={"header-contacts-info " + (isContactsActive == true ? "" : "inactive")} >
 				<div className="header-contacts__item">Тел: +7 (916) 116-43-24</div>
 				<div className="header-contacts__item">Mail: trunov2000@mail.ru</div>
 			</div>
@@ -46,10 +57,10 @@ function HeaderTop(props) {
 
 function HeaderNav(props) {
 
-	const setMenuActive = ({isActive}) => "nav-menu__item" + (isActive ? " nav-menu__item--active" : "")
+	const setMenuActive = ({isActive}) =>  (isActive ? " nav-menu__item--active" : "nav-menu__item")
 
 	let navList = props.navItems.map((item) => {
-		return <li key={item.id} ><NavLink className={setMenuActive} to={item.link}>{item.text}</NavLink></li>
+		return <li key={item.id} className="nav-menu-elem "><NavLink className={setMenuActive} to={item.link}>{item.text}</NavLink></li>
 	}) //Создание списка для элементов навигации
 	return (
 		<nav className="nav">

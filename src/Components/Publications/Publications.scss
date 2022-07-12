@@ -156,7 +156,7 @@ $basic-color: #0066FF;
 	opacity: 1;
 	background-color: #fff;
 	animation-name: bookInfoMoving;
-	animation-duration: 400ms;
+	animation-duration: 300ms;
 	animation-iteration-count: 1;
 	animation-direction: alternate;
 }
@@ -164,10 +164,10 @@ $basic-color: #0066FF;
 @keyframes bookInfoMoving {
 	0% {
 		transform: translate(0px, 100px);
+		opacity: 0.6;
 	}
 	100% {
 		transform: translate(0px, 0px);
-		opacity: 1;
 	}
 }
 

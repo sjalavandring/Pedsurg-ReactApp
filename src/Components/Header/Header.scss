@@ -16,6 +16,7 @@ $basic-color: #0066FF;
 
 .logo {
 	display: flex;
+	align-items: center;
 	justify-content: space-between;
 }
 
@@ -28,9 +29,46 @@ $basic-color: #0066FF;
 }
 
 .header-contacts {
+	display: flex;
+	width: 255px;
+	flex-direction: column;
+	text-align: center;
 	align-self: center;	
-	padding: 0 30px;
+	align-items: center;
 	font-size: 17px;
+	transition: 0.3s;
+}
+
+.header-contacts__button {
+	padding: 5px 12px;
+	text-align: center;
+	border-radius: 20px;
+	color: #fff;
+	background-color: $basic-color;
+	font-size: 18px;
+	cursor: pointer;
+
+}
+
+.header-contacts-info {
+	animation-name: contactsMoving;
+	animation-duration: 500ms;
+	@keyframes contactsMoving {
+		0% {
+			opacity: 0.5;
+			transform: translate(20px, 0px);
+		}
+		100% {
+			opacity: 1;
+			transform: translate(0px, 0px);
+		}
+	}
+}
+
+
+.header-contacts__item {
+	font-family: 'Ubuntu', sans-serif;
+	margin-top: 4px;
 }
 
 .nav {
@@ -47,18 +85,20 @@ $basic-color: #0066FF;
 .nav-menu__item {
 	color: #fff;
 	transition: 0.3s ease;
+	font-family: 'Ubuntu', sans-serif;
 }
 
 .nav-menu__item--active {
-	justify-content: center;
-	&:after {
-		content: "";
-		display: block;
-		width: inherit;
-		background-color:#fff;
-		height: 2px;
-		margin: auto;
-		border-radius: 5px;
-		animation: chapter-active 0.4s ease;
-	}
+	display: block;
+	@extend .nav-menu__item;
+	// &:after {
+	// 	content: "";
+	// 	display: block;
+	// 	width: inherit;
+	// 	background-color:#fff;
+	// 	height: 2px;
+	// 	margin: auto;
+	// 	border-radius: 5px;
+	// 	animation: chapter-active 0.4s ease;
+	// }
 }

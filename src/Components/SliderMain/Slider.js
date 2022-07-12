@@ -6,15 +6,20 @@ function SliderMain(props) {	 //sliderData - массив объектов с и
 	let [currentSlide, setSlide] = useState(1);  
 	let [activePoint, setActive] = useState(1);
 
+	// setInterval(() => {
+	// 	nextSlide()
+	// }, 10000)
+
 	function nextSlide() {
 		currentSlide >= props.sliderData.length ? setSlide(1) : setSlide(currentSlide+1);
 	}
 	function prevSlide() {
 		currentSlide <= 1 ? setSlide(props.sliderData.length) : setSlide(currentSlide-1);
 	}  
-	function toggleActivePoint() {
 
-	}
+	// function checkPrevSlide() {
+	// 	prevSlide
+	// }
 
 	let sliderItems = props.sliderData.map((item, id) => {
 		return <span key={item.id} className={currentSlide === (id + 1) ? "slider-points__item--active" : "slider-points__item"} onClick={() => setSlide(item.id)}></span>
@@ -23,12 +28,12 @@ function SliderMain(props) {	 //sliderData - массив объектов с и
 	return (
 		<div className="slider">	
 			<div className="slider-arrow arrow-left" draggable="false" onClick={prevSlide}>
-				<img className="arrow-inner" src={arrowLeft} alt="" draggable="false"/>
+				<img className="arrow-inner" src={arrowLeft} alt="left-arrow" draggable="false"/>
 			</div>
 			<div className="slider-body">	
 				<div className="slider-slide" width={props.sliderSize.width}>	
 					<a  href={props.sliderData[currentSlide-1].href}>
-						<img src={props.sliderData[currentSlide-1].src} alt="" height={props.sliderSize.height}/>	
+						<img src={props.sliderData[currentSlide-1].src} alt="slider-img" height={props.sliderSize.height}/>	
 					</a>
 				</div>
 				<div className="slider-points">
@@ -36,7 +41,7 @@ function SliderMain(props) {	 //sliderData - массив объектов с и
 				</div>
 			</div>
 			<div className="slider-arrow arrow-right" onClick={nextSlide}>
-				<img className="arrow-inner" src={arrowRight} alt="" draggable="false"/>
+				<img className="arrow-inner" src={arrowRight} alt="right-arrow" draggable="false"/>
 			</div>
 		</div>	
 	)

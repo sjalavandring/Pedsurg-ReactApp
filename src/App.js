@@ -19,7 +19,6 @@ function App() {
         <Route path='directions' element={<Directions />} />
         <Route path='teachers' element={<Teachers />} />
         <Route path='publications/*' element={< Publications />}>
-          {/*<Route index path='*' element={< Mentions />} />*/}
           <Route path='mentions/' element={< Mentions />} />
           <Route path='books/' element={< Books />} />
         </Route>

@@ -28,18 +28,30 @@ function CardsListDropdown(props) {
 }
 
 function CardsListSlider(props) {
+	const [sliderMemo, setSliderMemo] = useState();  //Состояние необходимо для отслеживания предудущего слайда для корректного отображения анимации слайдов 
 	const [isZoomed, setZoom] = useState(false);
 	const [activeSlide, setActiveSlide] = useState(0);
 	let [currentSlide, setSlide] = useState(1)
 
 
 	function nextSlide() {
+		setSliderMemo(currentSlide);
 		currentSlide >= props.cardsListProps.links.length ? setSlide(1) : setSlide(currentSlide + 1);
-	}
-	function prevSlide() {
-		currentSlide <= 1 ? setSlide(props.cardsListProps.links.length) : setSlide(currentSlide - 1);
+		setSliderMemo("forward");
 	}
 
+	function prevSlide() {
+		setSliderMemo(currentSlide);
+		currentSlide <= 1 ? setSlide(props.cardsListProps.links.length) : setSlide(currentSlide - 1);
+		setSliderMemo("back");
+	}
+
+	function checkSlideAnimation() {
+		if (sliderMemo == "forward") return "slider-image--next";
+		if (sliderMemo == "back") return "slider-image--prev";
+		return ""
+	}  //Функция проверяет, в какую сторону был переключен слайдер
+ 
 	return (
 		<>
 			<div className="cards-list-inner cards-list-slider" src={props.cardsListProps.link}>
@@ -47,7 +59,7 @@ function CardsListSlider(props) {
 					<img src={slider_arrow__left} alt="slider_arrow__left"/>
 				</div>
 				<div className="cards-list-slider-body" onClick={() => {setZoom(true); setActiveSlide(props.cardsListProps.links[currentSlide - 1])}}>
-					<img className="cards-list-slider-image" src={props.cardsListProps.links[currentSlide - 1]} alt="illustration"/>
+					<img className={"cards-list-slider-image " + (checkSlideAnimation())} src={props.cardsListProps.links[currentSlide - 1]} alt="illustration"/>
 				</div>	
 				<div className="cards-list-slider__arrow cards-list-arrow-right" onClick={nextSlide}>
 					<img src={slider_arrow__right} alt="slider_arrow__right"/>
