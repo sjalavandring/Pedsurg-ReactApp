@@ -1,6 +1,7 @@
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import slider_arrow__left from "../../img/DirectionsCardsList/slider_arrow__left.png";
 import slider_arrow__right from "../../img/DirectionsCardsList/slider_arrow__right.png"; //импорт стрелок для слайдера CardsListSlider
+
 
 
 function CardsListImage (props) {

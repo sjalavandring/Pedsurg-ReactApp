@@ -13,6 +13,7 @@
 	/* Landscape phones and portrait tablets */
 	@media (max-width: 767px) { 
 		.nav--mobile {
+			// position: absolute;
 			min-width: 100vw;
 		}
 		.nav-menu__item--mobile {
@@ -22,7 +23,6 @@
 		}	
 
 		@keyframes menuMobileMoving{
-			
 			0% {
 				overflow: hidden;
 				transform: translate(0px, 200px)

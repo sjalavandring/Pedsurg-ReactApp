@@ -66,7 +66,7 @@
 	@keyframes showListElem {
 		0% {
 			position: relative;
-			top: -100px;
+			top: -50px;
 		}
 		100% {
 			position: relative;
@@ -103,28 +103,26 @@
 	animation-name: nextSlide;
 	animation-duration: 300ms;
 	animation-timing-function: easy-out;
-	animation-duration: infinite;
 	@keyframes nextSlide {
 		0% {
 			opacity: 0.6;
-			transform: translate(15%, 0px)
+			transform: translate(10%, 0px)
 		}
 		100% {
 			opacity: 1;
 			transform: translate(0px, 0px)
-			// cursor: default;
 		}
 	}
 }
+
 .slider-image--prev {
 	animation-name: prevSlide;
 	animation-duration: 300ms;
 	animation-timing-function: easy-out;
-	animation-direction: reverse;
 	@keyframes prevSlide {
 		0% {
-			opacity: 0;
-			transform: translate(-15%, 0px)
+			opacity: 0.6;
+			transform: translate(-10%, 0px)
 		}
 
 		100% {

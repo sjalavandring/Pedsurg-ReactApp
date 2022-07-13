@@ -14,7 +14,9 @@
 	/* Landscape phones and portrait tablets */
 	@media (max-width: 767px) { 
 		.aboutus-elem {
-			max-width: 80%;
+			display: flex;
+			flex-direction: column;
+			max-width: 100%;
 			margin: 40px auto;
 		}
 
@@ -23,9 +25,15 @@
 			margin: 20px auto;
 		}
 
-		// .aboutus__descript {
-		// 	font-size: 20px;
-		// }
+		.aboutus-descript {
+			max-width: 100%;
+			margin: 20px 50px 0;
+			text-align: center;
+		}
+		.aboutus-descript-title {
+			
+		}
+
 	}
 	/* Portrait phones and smaller */
 	@media (max-width: 480px) {

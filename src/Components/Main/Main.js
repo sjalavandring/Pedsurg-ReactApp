@@ -6,6 +6,8 @@ import slide3 from "../../img/main-slider/slide3.jpg";
 import slide4 from "../../img/main-slider/slide4.jpg";
 import slide5 from "../../img/main-slider/slide5.jpg";
 import slide6 from "../../img/main-slider/slide6.jpg";
+import slide7 from "../../img/main-slider/slide7.jpg";
+import slide8 from "../../img/main-slider/slide8.jpg";
 
 function Main() {
 	let sliderData = [
@@ -15,6 +17,8 @@ function Main() {
 		{id: 4, src: slide4},
 		{id: 5, src: slide5},
 		{id: 6, src: slide6},
+		{id: 7, src: slide7},
+		{id: 8, src: slide8},
 	]
 
 	return (

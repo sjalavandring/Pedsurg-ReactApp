@@ -5,17 +5,49 @@
 }
 
 .aboutus-elem {
-	max-width: 80%;
+	display: flex;
+	max-width: 95%;
+	align-items: center;
 	margin: 50px auto;
 }
 
 .aboutus__image {
 	max-height: 450px;
 	margin: 25px auto;
+	animation-name:aboutUsImgMoving;
+	animation-duration: 400ms;
+	@keyframes aboutUsImgMoving{
+		0% {
+			opacity: 0.6;
+			transform: translate(-60px, 0);
+		}
+		100% {
+			opacity: 1;
+			transform: translate(0, 0);
+		}
+	}
 }
 
-.aboutus__descript {
+.aboutus-descript {
+	max-width: 50%;
 	text-align: center;
-	font-size: 25px;
-	line-height: 1.5em;
+	font-size: 20px;
+	line-height: 1.3em;
+	text-align: left;
+	animation-name:aboutUsDescMoving;
+	animation-duration: 400ms;
+	@keyframes aboutUsDescMoving{
+		0% {
+			opacity: 0.6;
+			transform: translate(60px, 0);
+		}
+		100% {
+			opacity: 1;
+			transform: translate(0, 0);
+		}
+	}
+}
+
+.aboutus-descript__text {
+	margin: 10px auto 20px;
 }

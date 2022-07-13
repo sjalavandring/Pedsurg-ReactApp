@@ -91,7 +91,7 @@ function PublicationsItems (props) {
 
 	if (visibleElementsCount > 0) {
 		// setTimeout(() => {
-			setTimeout(handleFunction(1));
+			handleFunction(1);
 		// });
 	}
 
