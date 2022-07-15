@@ -1,4 +1,5 @@
 import {useState, useEffect} from "react";
+import React from 'react';
 import slider_arrow__left from "../../img/DirectionsCardsList/slider_arrow__left.png";
 import slider_arrow__right from "../../img/DirectionsCardsList/slider_arrow__right.png"; //импорт стрелок для слайдера CardsListSlider
 
@@ -6,13 +7,23 @@ import slider_arrow__right from "../../img/DirectionsCardsList/slider_arrow__rig
 
 function CardsListImage (props) {
 	return (
-		<img className="cards-list-inner cards-list-image" src={props.cardsListProps.link} alt="illustration"/>	
+		<div className="cards-list-inner cards-list-image">
+			<img className="cards-list-image__item" src={props.cardsListProps.link} alt="illustration"/>
+		</div>	
+
 	)
 }
 
 function CardsListDescript (props) {
+	const element = React.useRef(null);
+	// useEffect(() => {
+	// 	if (element.current.getBoundingClientRect().height < parseInt(window.getComputedStyle(element.current).maxHeight.split('').splice(0, 3).join(''))) //Приводим к числовумо значению первые три цифры максимальной высоты элемента 
+	// 		element.current.style.overflowX = "hidden" 
+	// 		//Если текст влезает блок, то прокрутка удаляется 
+	// }, [])
+
 	return (
-		<p className="cards-list-inner cards-list-text">{props.cardsListProps.text}</p>
+		<p className="cards-list-text cards-list-inner" ref={element}>{props.cardsListProps.text}</p>
 	)
 }
 

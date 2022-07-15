@@ -12,7 +12,9 @@ function Directions() {
 		return (
 			<>
 				<div className="cards-list-dropdown" onClick={() => {changeCardsListVisibility(!cardsListVisibility);}}>
-					<img className={"cards-list-dropdown__img " + (cardsListVisibility == true ? "cards-list-dropdown__img--active" : "dropdown__img--inactive")} src={directionsArrow}/> 
+					<div className={"dropdown-button " + (cardsListVisibility == true ? "dropdown-button--active" : "")}> 
+						<img className="dropdown-button__img" src={directionsArrow}/> 
+					</div>
 					<CardsListDropdown cardsListProps={props.directionsListProps}/>
 				</div>
 				<div className={"cards-list-elem directions-elem " + (cardsListVisibility == true ? "cards-list-elem--active" : "inactive")}>
