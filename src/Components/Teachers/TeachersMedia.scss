@@ -4,60 +4,54 @@
 }
 /* Landscape tablets and medium desktops */
 @media (min-width: 992px) and (max-width: 1199px) {
-	.cards-list-elem {
+	.teachers-elem {
+		display: flex;
+		flex-flow: column;
+		align-items: center;
+	} 
+
+	.teachers-elem {
 		font-size: 1.6em;
 	}
-	.cards-list-image {
+
+	.teachers-image {
 		width: 80%;
 	}
 
-	.cards-list-inner {
+	.teachers-inner {
 		margin: 40px;
 	}
-	.cards-list-descript {
+	.teachers-descript {
 		font-size: 25px;
 		margin: 0px;
 	}
 }
 /* Portrait tablets and small desktops */
 @media (max-width: 991px) {
-	.cards-list-elem {
+	.teachers-elem {
 		display: flex;
-		margin: 40px auto;
 		flex-flow: column;
-		text-align: center;
+		align-items: center;
+		margin: 40px auto;
+		text-align: left;
 	} 
-	.cards-list-elem {
+
+	.teachers-elem {
 		font-size: 1.6em;
 	}
-	.cards-list-image {
+	.teachers-image {
 		margin:40px;
 	}
 	
-	.cards-list-descript {
+	.teachers-descript {
 		font-size: 25px;
 		padding: 0 40px
 	}
 
-	.cards-list-item {
-		margin: 30px;
-	}
 }
 /* Landscape phones and portrait tablets */
 @media (max-width: 767px) { 
-	.cards-list-image {
+	.teachers-image {
 		margin:20px;
 	}
-	.cards-list-slider__img {
-		transform: scale(1);
-		max-width: 450px;
-	}
-}
-/* Portrait phones and smaller */
-@media (max-width: 480px) {
-
-}
-/* Iphone 5 */
-@media (max-width: 320px) {
-
 }

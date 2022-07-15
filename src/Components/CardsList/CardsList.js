@@ -1,5 +1,4 @@
 import {Header, Main, Footer, Directions, Publications, DirectionsContext} from '../../index.js';
-import MediaQuery from 'react-responsive';
 import React, { useLayoutEffect, useState,} from 'react';
 
 

@@ -1,6 +1,74 @@
 .main-teachers {
-	// display: flex;
+	display: flex;
 	flex-direction: column;
 	background-color: #fff;
+}
+
+.cards-list-elem {
+	max-width: 1400px;
+	width: 100%;
+	margin: 20px auto;
+}
+
+.teachers-elem {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	margin: 40px 0;
+}
+
+.teachers-image {
+	display: flex;
+	width: 100%;
+	justify-content: center;
+	animation-name:teachersImgMoving;
+	animation-duration: 300ms;
+	@keyframes teachersImgMoving{
+		0% {
+			opacity: 0.6;
+			transform: translate(60px, 0);
+		}
+		100% {
+			opacity: 1;
+			transform: translate(0, 0);
+		}
+	}
+}
+
+.teachers-image__item {
+	height: 500px;
+}
+
+.teachers-descript {
+	width: 90%;
+	padding: 0 30px;
+	font-family: 'Rubik', sans-serif;
+	font-size: 20px;
+	animation-name:teachersDescMoving;
+	animation-duration: 300ms;
+	@keyframes teachersDescMoving{
+		0% {
+			opacity: 0.6;
+			transform: translate(-60px, 0);
+		}
+		100% {
+			opacity: 1;
+			transform: translate(0, 0);
+		}
+	}
+}
+
+.teachers-title {
+	display: block;
+	margin: 20px 0;
+	font-size: 1.3em;
+	text-align: center;
+}
+
+.teachers-text {
+	overflow-y: scroll;
+	white-space: pre-line;
+	max-height: 500px;
+	// text-overflow: ellipsis;
 }
 

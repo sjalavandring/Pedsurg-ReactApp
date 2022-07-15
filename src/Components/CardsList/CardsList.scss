@@ -12,24 +12,23 @@
 .cards-list-elem {
 	display: flex;
 	justify-content: space-between;
-	align-items: center;
+	align-items: flex-end;
 	margin: 40px 0;
 }
 
 .cards-list-image {
-	width: 700px;
 	display: flex;
+	width: 100%;
 	justify-content: center;
 }
 
 .cards-list-image__item {
-	height: 400px;
+	height: 500px;
 }
 
 .cards-list-descript {
-	max-height: 695px;
-	max-width: 700px;
-	padding: 0 40px;
+	width: 90%;
+	padding: 0 30px;
 	font-family: 'Rubik', sans-serif;
 	font-size: 20px;
 }
@@ -42,9 +41,9 @@
 }
 
 .cards-list-text {
-	max-height: 500px;
 	overflow-y: scroll;
 	white-space: pre-line;
+	max-height: 500px;
 	// text-overflow: ellipsis;
 }
 
@@ -69,6 +68,7 @@
 	// transform: rotate(90deg);
 }
 
+
 .dropdown-button__img {
 	height: 20px;
 }
@@ -77,22 +77,6 @@
 	font-size: 2em;
 }
 
-
-.directions-elem {
-	animation-name: showListElem;
-	animation-timing-function: easy-out;
-	animation-duration: 300ms;
-	@keyframes showListElem {
-		0% {
-			position: relative;
-			top: -50px;
-		}
-		100% {
-			position: relative;
-			top: 0px;
-		}
-	}
-}
 
 
 .cards-list-slider {
