@@ -1,11 +1,9 @@
 import publicationsInfo from '../../database/PublicationsDB.js';
 import publicBooks from '../../database/PublicationBooksDB.js';
-import React, {useState, useEffect, useRef} from 'react';
-import {Header, Main, Footer, Directions} from '../../index.js';
-import {BrowserRouter, NavLink, Outlet, useOutletContext} from "react-router-dom";
+import React, {useState, useEffect} from 'react';
+import {NavLink, Outlet, useOutletContext} from "react-router-dom";
 
 function Publications() {
-
 	const setActive = ({isActive}) =>  "publications-nav__item " + (isActive ? "publications-nav__item--active" : "");
 	
 	let [searchTarget, setSearchTarget] = useState("");
@@ -63,8 +61,6 @@ function PublicationsItems (props) {
 		props.changeA(a);
 	}
 
-	let childrenCount = props.publicationProp.length;
-
 
 	let publication = props.publicationProp.publics.map((info, id) => {
 		let publicationText = info.name + info.autors + info.description;
@@ -77,9 +73,6 @@ function PublicationsItems (props) {
 		)
 	})
 
-	publication.forEach((item, id) => {
-		if (item.props.className.includes("inactive")) {childrenCount-=1}
-	})
 
 	let visibleElementsCount = 0;
 	publication.forEach((item, id) => {
@@ -90,11 +83,10 @@ function PublicationsItems (props) {
 	})
 
 	if (visibleElementsCount > 0) {
-		// setTimeout(() => {
+		setTimeout(() => {
 			handleFunction(1);
-		// });
+		});
 	}
-
 
 	return (
 		<>	
@@ -117,7 +109,7 @@ function Books() {
 	return (
 		<div className="publications-books">
 			{bookInfo}
-			<div className={"book-zoom-background " + (isZoomed == 1 ? "shadowBack" : "")} onClick={() => setZoom(!isZoomed)}></div>
+			<div className={"book-zoom-background " + (isZoomed === true ? "shadowBack" : "")} onClick={() => setZoom(!isZoomed)}></div>
 			<ZoomBook activeBook={activeBook} isZoomed={isZoomed}/>
 		</div>
 	)

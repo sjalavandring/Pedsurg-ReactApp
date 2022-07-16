@@ -1,8 +1,7 @@
 import logo1 from "../../img/logo1.png"
 import logo2 from "../../img/logo2.jpg"
 import logo3 from "../../img/logo3.jpg"
-import {BrowserRouter, Routes, Route, Link, NavLink} from "react-router-dom";
-import {Footer} from '../../index.js'
+import {NavLink} from "react-router-dom";
 import navItems from '../../database/MainMenuDB.js';
 import {useState} from "react"
 
@@ -46,8 +45,8 @@ function HeaderContacts() {
 	let [isContactsActive, setContactsActive] = useState(false);
 	return (
 		<div className="header-contacts">
-			<button className="header-contacts__button" onClick={() => {setContactsActive(!isContactsActive)}}>{isContactsActive == false ? "Показать контакты" : "Скрыть контакты"}</button>
-			<div className={"header-contacts-info " + (isContactsActive == true ? "" : "inactive")} >
+			<button className="header-contacts__button" onClick={() => {setContactsActive(!isContactsActive)}}>{isContactsActive === false ? "Показать контакты" : "Скрыть контакты"}</button>
+			<div className={"header-contacts-info " + (isContactsActive === true ? "" : "inactive")} >
 				<div className="header-contacts__item">Тел: +7 (916) 116-43-24</div>
 				<div className="header-contacts__item">Mail: trunov2000@mail.ru</div>
 			</div>

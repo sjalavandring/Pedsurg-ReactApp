@@ -19,9 +19,6 @@
 @import "Components/Directions/Directions.scss";
 @import "Components/Directions/DirectionsMedia.scss";
 
-@import "Components/CardsList/CardsList.scss";
-@import "Components/CardsList/CardsListMedia.scss";
-
 @import "Components/Publications/Publications.scss";
 @import "Components/Publications/PublicationsMedia.scss";
 
@@ -51,7 +48,7 @@ $basic-color: #0066FF;
 }
 
 html {
-  margin-right: calc(-1 * (100vw - 100%));
+  // margin-right: calc(-1 * (100vw - 100%));
   @media (max-width: 1199px) {
     margin-right: 0px;
     overflow-x: hidden;
@@ -65,7 +62,7 @@ body {
   max-width: 1440px;
   margin: 0 auto;
   background-color: #E5E5E5;
-  overflow-x: hidden;
+  
 }
 
 
@@ -90,7 +87,7 @@ ul {
 }
 
 main {
-  // height: 80vh;
+  
 }
 
 .shadowBack {
@@ -109,5 +106,5 @@ main {
   display: none;
   visibility: hidden; 
 }
-//Временное решение, чтобы компоненты не съезжали!!!
+
 

@@ -41,8 +41,8 @@
 	/* Landscape phones and portrait tablets */
 	@media (max-width: 767px) { 
 		.footer-copyright {
-			margin: 0 10px;
-			font-size: 15px;
+			margin: 0 8px;
+			font-size: 12px;
 		}
 
 		.footer-address {
@@ -50,11 +50,31 @@
 		}
 
 		.footer-socials__item {
-			height: 35px;
+			height: 25px;
 			margin: 0 7px;
 			&:hover {
 				transform: scale(1.15);
 				transition: 0.4s ease-out;
 			}
 		}
+	}
+	/* Portrait phones and smaller */
+	@media (max-width: 480px) {
+		.footer {
+			padding: 6px 0;
+		}
+
+		.footer-copyright {
+			margin: 0 8px;
+			font-size: 10px;
+		}
+		.footer-socials__item {
+			height: 18px;
+			margin: 0 5px;
+		}
+	}
+
+	/* Iphone 5 */
+	@media (max-width: 320px) {
+
 	}

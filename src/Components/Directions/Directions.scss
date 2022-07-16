@@ -5,7 +5,7 @@
 	background-color: #fff;
 }
 
-.cards-list-element {
+.directions-list-element {
 	max-width: 1400px;
 	width: 100%;
 	margin: 20px auto;
@@ -21,35 +21,17 @@
 .directions-elem--active {
 	animation-name: showListElem;
 	animation-timing-function: easy-out;
-	animation-duration: 400ms;
+	animation-duration: 300ms;
 	@keyframes showListElem {
 		0% {
-			height: 0px;
-			overflow: hidden;
-			transform: translate(0, -50px);
+			opacity: 0.8;
+			transform: translate(0, -20px);
 		}
 		100% {
-			height: content-box;
-			overflow: hidden;
+			opacity: 1;
 			transform: translate(0, 0);
 		}
 	}
-}
-
-.directions--inactive {
-	display: none;
-	visibility: hidden;
-	// animation-name: hideListElem;
-	// animation-timing-function: easy-out;
-	// animation-duration: 300ms;
-	// @keyframes hideListElem {
-	// 	0% {
-	// 		transform: translate(0, 0);	
-	// 	}
-	// 	100% {	
-	// 		transform: translate(0, -50px);
-	// 	}
-	// }
 }
 
 .directions-image {
@@ -57,9 +39,7 @@
 	display: flex;
 }
 
- 
-.directions-descript {  //Добавить в CardsList
-	max-height: 695px;
+.directions-descript { 
 	max-width: 700px;
 	padding: 0 40px;
 	font-family: 'Rubik', sans-serif;
@@ -74,10 +54,9 @@
 }
 
 .directions-text {
-	overflow-y: scroll;
+	overflow-y: auto;
 	white-space: pre-line;
 	max-height: 500px;
-	// text-overflow: ellipsis;
 }
 
 .directions-dropdown{
@@ -95,19 +74,19 @@
 	position: relative;
 	z-index: 1;
 	transform: rotate(90deg);
-	// animation-name: dropdownOpen;
-	// animation-duration: 400ms;
-	// animation-direction: reverse;
-	// transform: rotate(90deg);
 }
 
 
 .dropdown-button__img {
-	height: 20px;
+
 }
 
 .directions-dropdown__text {
 	font-size: 2em;
+}
+
+.dropdown-button__img {
+	height: 20px;
 }
 
 
@@ -130,44 +109,41 @@
 	transition: 0.2s ease;
 	cursor: pointer;
 	transition: 0.4s;
-	&:hover {
-		// transition: 0.7s;
-		// transform: scale(1.03);
-	}
+	box-shadow: 3px 3px 25px 1px #000;
 }
 
-.slider-image--next {
-	animation-name: nextSlide;
-	animation-duration: 300ms;
-	animation-timing-function: easy-out;
-	@keyframes nextSlide {
-		0% {
-			opacity: 0.6;
-			transform: translate(10%, 0px)
-		}
-		100% {
-			opacity: 1;
-			transform: translate(0px, 0px)
-		}
-	}
-}
+// .slider-image--next {
+// 	animation-name: nextSlide;
+// 	animation-duration: 300ms;
+// 	animation-timing-function: easy-out;
+// 	@keyframes nextSlide {
+// 		0% {
+// 			opacity: 0.6;
+// 			transform: translate(10%, 0px)
+// 		}
+// 		100% {
+// 			opacity: 1;
+// 			transform: translate(0px, 0px)
+// 		}
+// 	}
+// }
 
-.slider-image--prev {
-	animation-name: prevSlide;
-	animation-duration: 300ms;
-	animation-timing-function: easy-out;
-	@keyframes prevSlide {
-		0% {
-			opacity: 0.6;
-			transform: translate(-10%, 0px)
-		}
+// .slider-image--prev {
+// 	animation-name: prevSlide;
+// 	animation-duration: 300ms;
+// 	animation-timing-function: easy-out;
+// 	@keyframes prevSlide {
+// 		0% {
+// 			opacity: 0.6;
+// 			transform: translate(-10%, 0px)
+// 		}
 
-		100% {
-			opacity: 1;
-			transform: translate(0px, 0px)
-		}
-	}
-}
+// 		100% {
+// 			opacity: 1;
+// 			transform: translate(0px, 0px)
+// 		}
+// 	}
+// }
 
 .directions-slider__arrow {
 	display: flex;
@@ -215,7 +191,8 @@
 	}
 }
 
-.directions-slider__img {
-	max-width: 500px;
+.directions-slider__img--zoomed {
+	max-width: 90vw;
+	max-height: 90vh;
 }
 

@@ -31,9 +31,6 @@ import dir82 from "../img/DirectionsCardsList/Direction8/dir8.2.jpg"
 import dir83 from "../img/DirectionsCardsList/Direction8/dir8.3.jpg"
 import dir84 from "../img/DirectionsCardsList/Direction8/dir8.4.jpg"
 import dir85 from "../img/DirectionsCardsList/Direction8/dir8.5.jpg"
-import dir86 from "../img/DirectionsCardsList/Direction8/dir8.6.jpg"
-import dir87 from "../img/DirectionsCardsList/Direction8/dir8.7.jpg"
-import dir88 from "../img/DirectionsCardsList/Direction8/dir8.8.jpg"
 
 import dir91 from "../img/DirectionsCardsList/Direction9/dir9.1.jpg"
 import dir92 from "../img/DirectionsCardsList/Direction9/dir9.2.jpg"
@@ -42,7 +39,6 @@ import dir93 from "../img/DirectionsCardsList/Direction9/dir9.3.jpg"
 import dir101 from "../img/DirectionsCardsList/Direction10/dir10.1.jpg"
 
 import dir111 from "../img/DirectionsCardsList/Direction11/dir11.1.jpg"
-import dir112 from "../img/DirectionsCardsList/Direction11/dir11.2.jpg"
 
 
 
@@ -124,7 +120,7 @@ let directionsDB =   [
 				},				{
 					"id": 11,
 					"name": "Болезнь Гиршпрунга",
-					"links": [dir111, dir112],
+					"links": [dir111],
 					"text": `Болезнь Гиршпрунга – аганглиоз толстой кишки, отсутствие адекватной иннервации какого-либо отдела кишечника. Заболевание остается одним из наиболее тяжелых врожденных пороков развития органов брюшной полости у детей, требующих выполнения сложных реконструктивных хирургических вмешательств. Наиболее частыми проявлениями болезни бывают упорные запоры, не поддающиеся консервативному лечению. Диагноз ставится на основании рентгенологической картины и результатов гистологического исследования биоптатов стенки кишки. Мы отдаем предпочтение выполнению лапароскопической операции при болезни Гиршпрунга, которая зарекомендовала себя, как «золотой стандарт» и позволяет достичь превосходного клинического результата. Технической особенностью выполнения данного вмешательства является одновременная работа двух хирургических бригад, одна из которых решает вопросы лапароскопической мобилизации резецируемой кишки, а вторая- выполняет промежностный этап с целью формирования надежного анастомоза между низведенной кишкой и областью ануса.`,
 				},			
 

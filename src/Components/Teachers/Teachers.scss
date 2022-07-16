@@ -4,12 +4,6 @@
 	background-color: #fff;
 }
 
-.cards-list-elem {
-	max-width: 1400px;
-	width: 100%;
-	margin: 20px auto;
-}
-
 .teachers-elem {
 	display: flex;
 	justify-content: space-between;
@@ -37,6 +31,7 @@
 
 .teachers-image__item {
 	height: 500px;
+	box-shadow: 3px 3px 25px 1px #000;
 }
 
 .teachers-descript {
@@ -66,9 +61,8 @@
 }
 
 .teachers-text {
-	overflow-y: scroll;
+	overflow-y: auto;
 	white-space: pre-line;
 	max-height: 500px;
-	// text-overflow: ellipsis;
 }
 

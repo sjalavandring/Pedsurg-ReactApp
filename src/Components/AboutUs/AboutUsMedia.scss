@@ -37,7 +37,17 @@
 	}
 	/* Portrait phones and smaller */
 	@media (max-width: 480px) {
-
+		.aboutus-elem {
+			margin: 10px auto;
+		}
+		.aboutus__image {
+			max-height: 250px;
+			margin: 10px auto;
+		}
+		.aboutus-descript {
+			font-size: 12px;
+			line-height: 1.2em;
+		}
 	}
 	/* Iphone 5 */
 	@media (max-width: 320px) {

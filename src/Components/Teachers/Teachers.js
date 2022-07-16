@@ -1,10 +1,9 @@
 import {useInnerWidth} from '../../index.js';
 import teachersDB from '../../database/TeachersDB.js'; 
-import React, {useState} from 'react'
+import React from 'react'
 
 
 function Teachers() {
-	let [teachersListProps, setTeachersListProps] = useState(teachersDB[0])
 	let innerWidth = useInnerWidth();
 	function TeachersEven(props) {
 		return (
@@ -31,16 +30,16 @@ function Teachers() {
 	}
 	
 	let teachersListInfo = teachersDB.map((item, id) => {	
-		if ((item.id % 2 == 1) || (innerWidth < 1199)) {
+		if ((item.id % 2 === 1) || (innerWidth < 1199)) {
 			return (
-				<div className="cards-list-elem" key={id}>
+				<div className="teachers-list-element" key={id}>
 					<TeachersEven teachersListProps={teachersDB[id]}/>
 				</div>
 			) 
 		} else 
-		if (item.id % 2 == 0)  {
+		if (item.id % 2 === 0)  {
 			return (
-				<div className="cards-list-elem" key={id}>
+				<div className="teachers-list-element" key={id}>
 					<TeachersOdd teachersListProps={teachersDB[id]}/>
 				</div>
 			)
@@ -64,15 +63,8 @@ function TeachersImage (props) {
 }
 
 function TeachersDescript (props) {
-	const element = React.useRef(null);
-	// useEffect(() => {
-	// 	if (element.current.getBoundingClientRect().height < parseInt(window.getComputedStyle(element.current).maxHeight.split('').splice(0, 3).join(''))) //Приводим к числовумо значению первые три цифры максимальной высоты элемента 
-	// 		element.current.style.overflowX = "hidden";
-	// 		//Если текст влезает блок, то прокрутка удаляется 
-	// }, [])
-
 	return (
-		<p className="teachers-text teachers-inner" ref={element}>{props.teachers.text}</p>
+		<p className="teachers-text teachers-inner">{props.teachers.text}</p>
 	)
 }
 

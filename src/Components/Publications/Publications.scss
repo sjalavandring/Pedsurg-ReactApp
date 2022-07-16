@@ -7,8 +7,7 @@ $basic-color: #0066FF;
 
 .main-publications{
 	background-color: #fff;
-	min-height: calc(100vh - 158px - 45px) ;
-	// background: url(../../img/publications/books-background.jpg);
+	min-height: calc(100vh - 158px - 45px);
 }
 
 .publication__year {
@@ -64,7 +63,6 @@ $basic-color: #0066FF;
 }
 
 .main-publications-content{
-	// display: flex;
 	justify-content: center;
 }
 
@@ -153,27 +151,27 @@ $basic-color: #0066FF;
 	height: 400px;
 	margin: auto;
 	border-radius: 5px;
+	text-align: center;
 	opacity: 1;
 	background-color: #fff;
 	animation-name: bookInfoMoving;
 	animation-duration: 300ms;
 	animation-iteration-count: 1;
 	animation-direction: alternate;
-}
-
-@keyframes bookInfoMoving {
-	0% {
-		transform: translate(0px, 100px);
-		opacity: 0.6;
-	}
-	100% {
-		transform: translate(0px, 0px);
+	@keyframes bookInfoMoving {
+		0% {
+			transform: translate(0px, 100px);
+			opacity: 0.6;
+		}
+		100% {
+			transform: translate(0px, 0px);
+		}
 	}
 }
 
 .book__img {
 	height: 300px;
-	
+	box-shadow: 3px 3px 25px 1px #000;
 }
 
 .book-zoom__description{

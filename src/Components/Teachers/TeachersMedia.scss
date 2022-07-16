@@ -33,18 +33,18 @@
 		flex-flow: column;
 		align-items: center;
 		margin: 40px auto;
-		text-align: left;
 	} 
 
-	.teachers-elem {
-		font-size: 1.6em;
-	}
 	.teachers-image {
 		margin:40px;
 	}
-	
+
+	.teachers-image__item {
+		height: 400px;
+	}
+		
 	.teachers-descript {
-		font-size: 25px;
+		font-size: 20px;
 		padding: 0 40px
 	}
 
@@ -54,4 +54,32 @@
 	.teachers-image {
 		margin:20px;
 	}
+}
+/* Portrait phones and smaller */
+@media (max-width: 480px) {
+	.teachers-elem {
+		display: flex;
+		flex-flow: column;
+		align-items: center;
+		margin: 20px auto;
+	} 
+
+	.teachers-image {
+		margin:15px;
+	}
+
+	.teachers-image__item {
+		height: 280px;
+	}
+		
+	.teachers-descript {
+		font-size: 12px;
+		padding: 0px;	
+	}
+
+}
+
+/* Iphone 5 */
+@media (max-width: 320px) {
+
 }

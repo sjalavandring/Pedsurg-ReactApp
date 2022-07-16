@@ -8,12 +8,13 @@
 	display: flex;
 	max-width: 95%;
 	align-items: center;
-	margin: 50px auto;
+	margin: 40px auto;
 }
 
 .aboutus__image {
 	max-height: 450px;
 	margin: 25px auto;
+	box-shadow: 2px 2px 25px 1px #000;
 	animation-name:aboutUsImgMoving;
 	animation-duration: 400ms;
 	@keyframes aboutUsImgMoving{
