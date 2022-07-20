@@ -38,6 +38,7 @@ function Mentions(props) {
 		setPublicationsVisibility(0);
 	}, [searchTarget])
 
+
 	let publicationInfo = publicationsInfo.map((info, id) => {
 		return (
 			<div className={"publication-content" + (publicationsVisibility > 0 ? "" : "inactive")}  key={id} >
@@ -45,7 +46,6 @@ function Mentions(props) {
 			</div>
 		)
 	})
-
 
 	return (
 		<div className="publications-mantions-content">
@@ -60,7 +60,11 @@ function PublicationsItems (props) {
 	function handleFunction (a) {
 		props.changeA(a);
 	}
-
+	
+	useEffect(() => {
+		handleFunction(1);
+		console.log(1)
+	}, [props.searchTarget])
 
 	let publication = props.publicationProp.publics.map((info, id) => {
 		let publicationText = info.name + info.autors + info.description;
@@ -79,7 +83,6 @@ function PublicationsItems (props) {
 		if (!item.props.className.includes("inactive")) {
 			visibleElementsCount+=1;
 		}
-
 	})
 
 	if (visibleElementsCount > 0) {

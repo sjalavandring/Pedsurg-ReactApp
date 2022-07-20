@@ -62,7 +62,8 @@
 .directions-dropdown{
 	display: flex;
 	align-items: center;
-	margin: 0 40px;
+	margin: 0 25px;
+	cursor: pointer;
 }
 
 .dropdown-button {
@@ -86,7 +87,7 @@
 }
 
 .dropdown-button__img {
-	height: 20px;
+	height: 17px;
 }
 
 
@@ -110,6 +111,8 @@
 	cursor: pointer;
 	transition: 0.4s;
 	box-shadow: 3px 3px 25px 1px #000;
+	-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+	-webkit-tap-highlight-color: transparent;
 }
 
 // .slider-image--next {

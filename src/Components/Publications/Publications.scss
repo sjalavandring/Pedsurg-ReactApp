@@ -7,7 +7,7 @@ $basic-color: #0066FF;
 
 .main-publications{
 	background-color: #fff;
-	min-height: calc(100vh - 158px - 45px);
+	min-height: calc(100vh - 159px - 45px);
 }
 
 .publication__year {
@@ -136,8 +136,14 @@ $basic-color: #0066FF;
 		transition: 0.2s ease;
 
 	}
+	-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+	-webkit-tap-highlight-color: transparent;
 }
 
+.book__img {
+	height: 300px;
+	box-shadow: 3px 3px 25px 1px #000;
+}
 
 .book-zoom-info {
 	position: fixed;
@@ -149,6 +155,7 @@ $basic-color: #0066FF;
 	z-index: 10;
 	width: 850px;
 	height: 400px;
+	max-height: 95vh;
 	margin: auto;
 	border-radius: 5px;
 	text-align: center;
@@ -167,11 +174,6 @@ $basic-color: #0066FF;
 			transform: translate(0px, 0px);
 		}
 	}
-}
-
-.book__img {
-	height: 300px;
-	box-shadow: 3px 3px 25px 1px #000;
 }
 
 .book-zoom__description{

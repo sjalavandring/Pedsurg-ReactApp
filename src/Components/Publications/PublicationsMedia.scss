@@ -6,7 +6,6 @@
 @media (max-width: 1199px) {
 	.main-publications{
 		background-color: #fff;
-		min-height: calc(100vh - 64px - 45px);
 	}
 	.search-field {
 		transition: none;
@@ -38,21 +37,21 @@
 	.book-zoom-info {
 		display: flex;
 		flex-direction: column;
-		justify-content: space-around;
 		width: 550px;
-		height: 650px;
+		height: 550px;
 		max-width: 95vw;
+		padding: 50px 0;
 	}
 
+	.book-zoom__description{
+		margin-top: 40px;	
+	}
 	.publications-nav__item{
 		margin:0 30px;
 	}
 
 }
-/* Landscape phones and portrait tablets */
-@media (max-width: 767px) { 
 
-}
 /* Portrait phones and smaller */
 @media (max-width: 480px) {
 	.publication {
@@ -87,25 +86,47 @@
 		font-size: 12px;
 	}
 	.book-zoom-info {
-		position: fixed;
 		display: flex;
-		top: 0px;
-		bottom: 0px;
-		left: 0px;
-		right: 0px;
-		z-index: 4;
+		flex-direction: column;
 		width: 250px;
-		height: 400px;
+		height: 450px;
+		max-width: 90vw;
+		padding: 50px 0px ;
 	}
 	.book__img {
 		height: 200px;
 	}
 	.book-zoom__description{
-		font-size: 10px;	
+		font-size: 15px;	
+	}
+
+	.book-zoom__description{
+		margin-top: 40px;	
 	}
 
 }
 /* Iphone 5 */
 @media (max-width: 320px) {
+	.publications-nav__item{
+		max-width: 100px;
+		margin:0px 10px 0 6px;
+		font-size: 1em;	
+	}
+	.book {
+		max-width: 200px;
+		margin: 10px auto;
+	}
+	.book__img {
+		height:200px;
+	}
 
+	.book-zoom-info {
+		width: 250px;
+		height: 350px;
+		max-width: 90vw;
+		padding: 10px 0px;
+	}
+	.book-zoom__description{
+		font-size: 10px;	
+	}
 }

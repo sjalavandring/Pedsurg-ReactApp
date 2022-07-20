@@ -1,3 +1,12 @@
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) { 
+	.header-contacts__item {
+		color: #fff;
+		font-family: 'Ubuntu', sans-serif;
+		margin: 10px 0;
+	}
+}
+
 /* Landscape phones and portrait tablets */
 @media (max-width: 767px) { 
 	.nav--mobile {
@@ -53,6 +62,10 @@
 		padding: 15px 0;
 		font-size: 1.1em;
 	}
+	.header-contacts__item {
+		color: #fff;
+		font-family: 'Ubuntu', sans-serif;
+	}
 }
 /* Portrait phones and smaller */
 @media (max-width: 480px) {
@@ -64,7 +77,14 @@
 		padding: 10px 0;
 		font-size: 1em;
 	}
+	.nav-logo--mobile {
+		display: flex;
+		flex-direction: column;
+		margin: 30px;
+	}
 	.nav-logo__item--mobile {
 		max-height: 50px !important;
+		margin: 10px auto;
 	}
+
 }

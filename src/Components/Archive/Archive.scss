@@ -1,6 +1,6 @@
 .main-archive {
 	display: flex;
-	height: calc(100vh - 158px - 45px) ;  //Убрать при добавлении контента на страницу
+	min-height: calc(100vh - 64px - 45px);  //Убрать при добавлении контента на страницу
 	background-color: #fff;
 }
 

@@ -1,35 +1,39 @@
-	/* Large desktops and laptops */
-	@media (min-width: 1200px) and (max-width: 1280px) {
-		.header-title {
-			font-size: 0.9rem;
-			align-self: center;
-		}
-		.nav-menu {
-			display: flex;
-			justify-content: space-between;
-			padding: 15px 20px;
-		}
+/* Large desktops and laptops */
+@media (min-width: 1200px) and (max-width: 1280px) {
+	.header-title {
+		font-size: 0.9rem;
+		align-self: center;
 	}
-	/* Landscape tablets and medium desktops */
-	@media (min-width: 992px) and (max-width: 1199px) {
-		.header-title {
-			font-size: 0.7rem;
-			align-self: center;
-		}
-
-		.logo__image {
-			height: 60px;
-		}
-
-		.header-contacts {
-			align-self: center;	
-			padding: 0 20px;
-			font-size: 14px;
-		}
-
-		.nav-menu {
-			display: flex;
-			justify-content: space-between;
-			padding: 15px 20px;
-		}
+	.nav-menu {
+		display: flex;
+		justify-content: space-between;
+		padding: 15px 20px;
 	}
+}
+/* Landscape tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+	.header-title {
+		font-size: 0.7rem;
+		align-self: center;
+	}
+
+	.logo__image {
+		height: 60px;
+	}
+
+	.header-contacts {
+		align-self: center;	
+		padding: 0 20px;
+		font-size: 14px;
+	}
+
+	.nav-menu {
+		display: flex;
+		justify-content: space-between;
+		padding: 15px 20px;
+	}
+	.header-contacts__item {
+		color: #fff;
+		font-family: 'Ubuntu', sans-serif;
+	}
+}

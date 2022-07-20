@@ -48,7 +48,9 @@ $basic-color: #0066FF;
 }
 
 html {
+  overflow-x: hidden;
   // margin-right: calc(-1 * (100vw - 100%));
+  margin-right: calc(-1 * (100vw - 100%));
   @media (max-width: 1199px) {
     margin-right: 0px;
     overflow-x: hidden;
@@ -99,7 +101,7 @@ main {
   left: 0px;
   right: 0px;
   opacity: 0.85;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .inactive {

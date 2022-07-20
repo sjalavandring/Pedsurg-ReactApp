@@ -25,6 +25,15 @@ function HeaderMobile () {
 		setMenuState(false);
 	}
 
+	function MobileMenuContacts () {
+		return (
+		<div className="header-contacts-info">
+			<div className="header-contacts__item">Тел: +7 (916) 116-43-24</div>
+			<div className="header-contacts__item">Mail: trunov2000@mail.ru</div>
+		</div>
+		)
+	}
+
 	function MobileMenuIcons () {
 		const logosList = logoNumbers.map((logo) => { 
 			return <a key={logo.id} href={logo.href}><img className="nav-logo__item--mobile " src={logo.link} alt="logo" /></a>
@@ -57,6 +66,7 @@ function HeaderMobile () {
 				</div>
 				<ul className="nav-menu--mobile">
 					<NavItems/>
+					<MobileMenuContacts/>
 					<MobileMenuIcons/>
 				</ul>
 			</div>
