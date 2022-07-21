@@ -1,9 +1,18 @@
-import {useInnerWidth} from '../../index.js';
 import teachersDB from '../../database/TeachersDB.js'; 
 import React from 'react'
-
+import {useState, useLayoutEffect} from 'react'
 
 function Teachers() {
+	function useInnerWidth () {
+		let [width, setWidth] = useState(window.innerWidth);
+		useLayoutEffect(() => {
+			window.addEventListener('resize', () => setWidth(window.innerWidth));
+		}, [])
+		return width;
+	}
+	// Хук useInnerWidth возвращает динамически меняющуюся ширину экрана, под которую подстраивается рендер компонента 
+	//Используется для корректного отображения элементов при масштабировании размеров экрана
+
 	let innerWidth = useInnerWidth();
 	function TeachersEven(props) {
 		return (

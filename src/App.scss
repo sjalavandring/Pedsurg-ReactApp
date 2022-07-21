@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital@1&display=swap');
 
-// @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
-
 @import "Components/Main/Main.scss";
 @import "Components/Main/MainMedia.scss";
 
@@ -60,6 +58,7 @@ html {
 
 body {
   font-family: 'Roboto', sans-serif;
+  min-height: 100%;
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;

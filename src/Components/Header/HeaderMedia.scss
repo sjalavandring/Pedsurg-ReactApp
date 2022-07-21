@@ -32,8 +32,12 @@
 		justify-content: space-between;
 		padding: 15px 20px;
 	}
+	.header-contacts-info {
+		animation-name: none;
+	}
 	.header-contacts__item {
 		color: #fff;
 		font-family: 'Ubuntu', sans-serif;
 	}
+	
 }

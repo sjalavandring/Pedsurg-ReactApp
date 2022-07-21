@@ -28,7 +28,7 @@ function SliderMain(props) {	 //sliderData - массив объектов с и
 			<div className="slider-body">	
 				<div className="slider-slide" width={props.sliderSize.width}>	
 					<a className="slider-slide__image" href={props.sliderData[currentSlide-1].href}>
-						<img src={props.sliderData[currentSlide-1].src} alt="slider-img" height={props.sliderSize.height}/>	
+						<img src={props.sliderData[currentSlide-1].src} alt="slider-img" height={props.sliderSize.height} onChange={console.log(currentSlide)}/>	
 					</a>
 				</div>
 				<div className="slider-points">
