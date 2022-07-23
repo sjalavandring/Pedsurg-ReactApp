@@ -1,12 +1,14 @@
 import MediaQuery from 'react-responsive';
 import SliderMain from '../SliderMain/Slider.js'
-import slide1 from "../../img/main-slider/slide1.jpg";
-import slide2 from "../../img/main-slider/slide2.jpg";
-import slide3 from "../../img/main-slider/slide3.jpg";
-import slide4 from "../../img/main-slider/slide4.jpg";
-import slide5 from "../../img/main-slider/slide5.jpg";
-import slide6 from "../../img/main-slider/slide6.jpg";
-import slide7 from "../../img/main-slider/slide7.jpg";
+import React from 'react';
+import slide1 from '../../img/main-slider/slide1.webp'
+import slide2 from '../../img/main-slider/slide2.webp'
+import slide3 from '../../img/main-slider/slide3.webp'
+import slide4 from '../../img/main-slider/slide4.webp'
+import slide5 from '../../img/main-slider/slide5.webp'
+import slide6 from '../../img/main-slider/slide6.webp'
+import slide7 from '../../img/main-slider/slide7.webp'
+
 
 function Main() {
 	let sliderData = [

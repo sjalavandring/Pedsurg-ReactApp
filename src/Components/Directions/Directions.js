@@ -77,19 +77,16 @@ function ZoomSlide(props) {
 }
 
 function DirectionsSlider(props) {
-	const [sliderMemo, setSliderMemo] = useState();  //Состояние необходимо для отслеживания предудущего слайда для корректного отображения анимации слайдов 
 	const [isZoomed, setZoom] = useState(false);
 	const [activeSlide, setActiveSlide] = useState(0);
 	let [currentSlide, setSlide] = useState(1)
 
 
 	function nextSlide() {
-		setSliderMemo(currentSlide);
 		currentSlide >= props.directionsProps.links.length ? setSlide(1) : setSlide(currentSlide + 1);
 	}
 
 	function prevSlide() {
-		setSliderMemo(currentSlide);
 		currentSlide <= 1 ? setSlide(props.directionsProps.links.length) : setSlide(currentSlide - 1);
 	}
  

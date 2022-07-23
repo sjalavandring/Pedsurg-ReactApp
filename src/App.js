@@ -5,8 +5,6 @@ import HeaderMobile from './Components/Header/HeaderMobile.js'
 import {BrowserRouter,Routes, Route} from "react-router-dom";
 import MediaQuery from 'react-responsive';
 
-// const Header = React.lazy(() => import('./Components/Header/Header.js'));
-// const HeaderMobile = React.lazy(() => import('./Components/Header/HeaderMobile.js'));
 const Main = React.lazy(() => import('./Components/Main/Main.js'));
 const Footer = React.lazy(() => import('./Components/Footer/Footer.js'));
 const Directions = React.lazy(() => import('./Components/Directions/Directions.js'));
