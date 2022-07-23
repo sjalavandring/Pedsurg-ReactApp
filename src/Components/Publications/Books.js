@@ -1,7 +1,5 @@
-import publicationsInfo from '../../database/PublicationsDB.js';
 import publicBooks from '../../database/PublicationBooksDB.js';
-import React, {useState, useEffect} from 'react';
-import {NavLink, Outlet, useOutletContext} from "react-router-dom";
+import React, {useState} from 'react';
 
 function Books() {
 	const [isZoomed, setZoom] = useState(false);

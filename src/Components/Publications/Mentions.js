@@ -6,7 +6,7 @@ function Mentions(props) {
 	let searchTarget = useOutletContext();
 
 	let [publicationsVisibility, setPublicationsVisibility] = useState(1);
-	function changeA (a) {
+	function changePublicationsVisibility (a) {
 		setPublicationsVisibility(a);
 	}
 
@@ -18,7 +18,7 @@ function Mentions(props) {
 	let publicationInfo = publicationsInfo.map((info, id) => {
 		return (
 			<div className={"publication-content" + (publicationsVisibility > 0 ? "" : "inactive")}  key={id} >
-				<PublicationsItems publicationProp={info} searchTarget={searchTarget} changeA={changeA} />
+				<PublicationsItems publicationProp={info} searchTarget={searchTarget} changePublicationsVisibility={changePublicationsVisibility} />
 			</div>
 		)
 	})
@@ -34,12 +34,11 @@ function Mentions(props) {
 
 function PublicationsItems (props) {
 	function handleFunction (a) {
-		props.changeA(a);
+		props.changePublicationsVisibility(a);
 	}
 	
 	useEffect(() => {
 		handleFunction(1);
-		// console.log(1)
 	}, [props.searchTarget])
 
 	let publication = props.publicationProp.publics.map((info, id) => {

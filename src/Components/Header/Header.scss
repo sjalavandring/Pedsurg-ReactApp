@@ -2,8 +2,9 @@ $sticky-header: -110px;
 $basic-color: #0066FF;
 
 .header {
-	position: sticky;
+	position: sticky !important;
 	top: $sticky-header;
+	z-index: 1;
 }
 
 .header-top {

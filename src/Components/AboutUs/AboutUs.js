@@ -4,7 +4,7 @@ import aboutUs3 from "../../img/aboutUs/aboutUs3.jpg"
 
 function AboutUs() {
 	return (
-		<div className="main-aboutus container">
+		<main className="main-aboutus container">
 			<div className="aboutus-elem">
 				<img className="aboutus__image" src={aboutUs1} alt="aboutUs1"/>	
 				<div className="aboutus-descript">
@@ -26,7 +26,7 @@ function AboutUs() {
 					<div className="aboutus-descript__text">Онкохирург-эксперт, выполняющий сложнейшие вмешательства у детей со злокачественными опухолями, доктор медицинских наук, профессор</div>
 				</div>
 			</div>
-		</div>
+		</main>
 	)
 }
 

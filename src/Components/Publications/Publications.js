@@ -1,9 +1,6 @@
-import publicationsInfo from '../../database/PublicationsDB.js';
-import publicBooks from '../../database/PublicationBooksDB.js';
-import React, {useState, useEffect} from 'react';
-import {NavLink, Outlet, useOutletContext} from "react-router-dom";
+import React, {useState} from 'react';
+import {NavLink, Outlet} from "react-router-dom";
 import Mentions from './Mentions.js';
-import Books from './Books.js';
 
 function Publications() {
 	const setActive = ({isActive}) =>  "publications-nav__item " + (isActive ? "publications-nav__item--active" : "");
@@ -11,7 +8,7 @@ function Publications() {
 	let [searchTarget, setSearchTarget] = useState("");
 	let [publicationsVisibility, setPublicationsVisibility] = useState(1);
 	return (
-		<main className="main-publications container ">
+		<main className="main-publications container">
 				<div className="publications-chapters">
 					<div className="publications-nav">
 						<NavLink className={setActive} to="mentions" component={() => <Mentions searchTarget={searchTarget}/>}>Публикации</NavLink>

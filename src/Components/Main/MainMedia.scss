@@ -1,122 +1,44 @@
-	/* Large desktops and laptops */
-	@media (min-width: 1200px) and (max-width: 1280px) {
+/* Large desktops and laptops */
+@media (min-width: 1200px) and (max-width: 1280px) {
 
 
+}
+/* Landscape tablets and medium desktops */
+@media (max-width: 1199px) {
+	.main-description {
+		text-align: center;
+		margin: 60px 30px;
 	}
-	/* Landscape tablets and medium desktops */
-	@media (max-width: 1199px) {
-		.main-description {
-			text-align: center;
-			margin: 60px 30px;
-		}
-		.main-description__quote {
-
-			&:before {
-				left: 20px;
-			}
-
-			&:after {
-				right: 20px;
-			}
-		}
+}
+/* Portrait tablets and small desktops */
+@media (max-width: 991px) { 
+	.main-description {
+		text-align: center;
+		margin: 60px 30px 0px;
+		font-size: 25px;
+		line-height: 30px;
 	}
-	/* Portrait tablets and small desktops */
-	@media (max-width: 991px) { 
-		.main-description {
-			text-align: center;
-			margin: 60px 30px 0px;
-			font-size: 25px;
-			line-height: 30px;
-		}
 
-		.main-description__quote {
-			&:before {
-				display: block;
-				position: static;
-				line-height: 0px;
-				text-align: left;
-			}
-
-			&:after {
-				display: block;
-				position: static;
-				text-align: right;
-				line-height: 20px;
-			}
-		}
-
+}
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) { 
+	.main-description {
+		margin: 40px auto;
+		font-size: 15px;
+		line-height: 23px;
 	}
-	/* Landscape phones and portrait tablets */
-	@media (max-width: 767px) { 
-		.main-description {
-			position: relative;
-			margin: 40px auto;
-			font-size: 15px;
-			line-height: 23px;
-		}
 
-		.main-description__quote {
-			max-width: 80vw;
-			font-size: 20px;
-			&:before{
-				content: '“';
-				position: absolute;
-				left: 0px;
-				font-size: 80px;
-				color: $basic-color;
-				
-			}
-
-			&:after{
-				content: '”';
-				position: absolute;
-				right: 20px;
-				line-height: 60px;
-			}
-		}
-
+	.main-description-quote__text {
+		max-width: 80vw;
+		font-size: 20px;
 	}
-	/* Portrait phones and smaller */
-	@media (max-width: 480px) {
-		.main-description__quote {
-			max-width: 80vw;
-			font-size: 20px;
-			&:before{
-				margin-top: 20px;
-				content: '“';
-				position: absolute;
-				left: -10px;
-				color: $basic-color;
-				
-			}
 
-			&:after{
-				content: '”';
-				position: absolute;
-				right: 20px;
-				line-height: 30px;
-			}
-		}
-	}
-	/* Iphone 5 */
-	@media (max-width: 320px) {
-		.main-description__quote {
-			max-width: 80vw;
-			font-size: 20px;
-			&:before{
-				margin-top: 20px;
-				content: '“';
-				position: absolute;
-				left: -20px;
-				color: $basic-color;
-				
-			}
+}
+/* Portrait phones and smaller */
+@media (max-width: 480px) {
 
-			&:after{
-				content: '”';
-				position: absolute;
-				right: 20px;
-				line-height: 30px;
-			}
-		}
-	}
+}
+/* Iphone 5 */
+@media (max-width: 320px) {
+
+}

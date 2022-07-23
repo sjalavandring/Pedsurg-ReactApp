@@ -28,6 +28,8 @@
 @import "Components/AboutUs/AboutUs.scss";
 @import "Components/AboutUs/AboutUsMedia.scss";
 
+@import "Components/NotFound/NotFound.scss";
+
 
 //Fonts
 
@@ -47,6 +49,7 @@ $basic-color: #0066FF;
 
 html {
   overflow-x: hidden;
+  height: 100vh;
   // margin-right: calc(-1 * (100vw - 100%));
   margin-right: calc(-1 * (100vw - 100%));
   @media (max-width: 1199px) {
@@ -58,12 +61,10 @@ html {
 
 body {
   font-family: 'Roboto', sans-serif;
-  min-height: 100%;
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
   background-color: #E5E5E5;
-  
 }
 
 
@@ -88,12 +89,31 @@ ul {
 }
 
 main {
-  
+  min-height: calc(100vh - 159px - 45px);
+}
+
+/* Landscape tablets and medium desktops */
+@media (max-width: 1199px) {
+  main {
+    min-height: calc(100vh - 110px - 56px);
+  }
+}
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) { 
+  main {
+    min-height: calc(100vh - 64px - 45px);
+  }
+}
+/* Portrait phones and smaller */
+@media (max-width: 480px) {
+ main {
+    min-height: calc(100vh - 64px - 30px);
+  }
 }
 
 .shadowBack {
   position: fixed;
-  z-index: 1;
+  z-index: 2;
   background-color: #000;
   top: 0px;
   bottom: 0px;

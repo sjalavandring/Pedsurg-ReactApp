@@ -5,10 +5,6 @@ import arrowRight from "../../img/slider_arrow-right.png";
 function SliderMain(props) {	 //sliderData - массив объектов с информацией о каждом слайде (id, src - ссылка на картинку слайдера, href - ссылка слайдера), SliderSize - объект с width и heigth слайдера
 	let [currentSlide, setSlide] = useState(1); 
 
-	// setInterval(() => {
-	// 	nextSlide()
-	// }, 10000)
-
 	function nextSlide() {
 		currentSlide >= props.sliderData.length ? setSlide(1) : setSlide(currentSlide+1);
 	}
@@ -28,7 +24,7 @@ function SliderMain(props) {	 //sliderData - массив объектов с и
 			<div className="slider-body">	
 				<div className="slider-slide" width={props.sliderSize.width}>	
 					<a className="slider-slide__image" href={props.sliderData[currentSlide-1].href}>
-						<img src={props.sliderData[currentSlide-1].src} alt="slider-img" height={props.sliderSize.height} onChange={console.log(currentSlide)}/>	
+						<img src={props.sliderData[currentSlide-1].src} alt="slider-img" height={props.sliderSize.height}/>	
 					</a>
 				</div>
 				<div className="slider-points">

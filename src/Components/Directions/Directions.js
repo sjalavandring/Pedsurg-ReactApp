@@ -1,6 +1,5 @@
-import {CardsList, DirectionsContext} from '../../index.js';
 import directionsDB from '../../database/DirectionsDB.js'; 
-import {useState, useEffect} from 'react';
+import {useState} from 'react';
 import React from 'react'
 import directionsArrow from '../../img/DirectionsCardsList/directionsArrow.png';
 import slider_arrow__left from "../../img/DirectionsCardsList/slider_arrow__left.png";
@@ -13,7 +12,7 @@ function Directions() {
 			<>
 				<div className="directions-dropdown" onClick={() => {changeDirectionsVisibility(!directionsVisibility);}}>
 					<div className={"dropdown-button " + (directionsVisibility === true ? "dropdown-button--active" : "")}> 
-						<img className="dropdown-button__img" src={directionsArrow}/> 
+						<img className="dropdown-button__img" src={directionsArrow} alt="img"/> 
 					</div>
 					<DirectionsDropdown directionsProps={props.directionsListProps}/>
 				</div>
@@ -27,19 +26,26 @@ function Directions() {
 			</>
 		)
 	}
+	function DirectionsListInfo() {
+		let directionsListInfo = directionsDB.map((item, id) => {	
+				return (
+					<div className="directions-list-element" key={id}>
+						<DirectionsElem directionsListProps={directionsDB[id]}/>
+					</div>
+				) 
+			}
+		)
+		return (
+			<>
+				{directionsListInfo}
+			</>
+		)
+	}
 
-	let directionsListInfo = directionsDB.map((item, id) => {	
-			return (
-				<div className="directions-list-element" key={id}>
-					<DirectionsElem directionsListProps={directionsDB[id]}/>
-				</div>
-			) 
-		}
-	)
 
 	return (
 		<main className="main-directions container">
-			{directionsListInfo}
+			<DirectionsListInfo/>
 		</main>	
 	)
 }
@@ -103,15 +109,6 @@ function DirectionsSlider(props) {
 			<div className={"directions-zoom-background " + (isZoomed === true ? "shadowBack" : "")} onClick={() => setZoom(!isZoomed)}></div>
 			<ZoomSlide activeSlide={activeSlide} isZoomed={isZoomed}/>
 		</>
-	)
-}
-
-function DirectionsImage (props) {
-	return (
-		<div className="directions-inner directions-image">
-			<img className="directions-image__item" src={props.directionsProps.link} alt="illustration"/>
-		</div>	
-
 	)
 }
 

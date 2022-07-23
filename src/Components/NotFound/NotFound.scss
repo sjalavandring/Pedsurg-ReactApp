@@ -1,17 +1,22 @@
-.main-archive {
+.main-not-found {
+	display: flex;
+	justify-content: center;
+}
+
+.not-found {
 	display: flex;
 	flex-direction: column;
 	background-color: #fff;
 	justify-content: center;
 }
 
-.archive-message {
+.not-found-message {
 	align-self: center;
 	margin: 0 auto;
 	font-size: 30px;
 }	
 
-.archive-image {
+.not-found-image {
 	width: 100px;
 	margin: 0 auto 40px;
 }
